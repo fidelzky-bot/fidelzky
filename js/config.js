@@ -54,7 +54,15 @@ function applyConfig() {
     }
     if (personal.title) {
         const heroTitle = document.getElementById('heroTitle');
-        if (heroTitle) heroTitle.textContent = personal.title;
+        if (heroTitle) {
+            // Split title for mobile display
+            const titleParts = personal.title.split(' & ');
+            if (titleParts.length === 2) {
+                heroTitle.innerHTML = `<span class="hero-title-main">${titleParts[0]}</span><span class="hero-title-sub">& ${titleParts[1]}</span>`;
+            } else {
+                heroTitle.textContent = personal.title;
+            }
+        }
     }
     if (personal.bio) {
         const heroBio = document.getElementById('heroBio');
