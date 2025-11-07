@@ -65,6 +65,14 @@ body {
     overflow-x: hidden;
 }
 
+/* Hide default cursor on desktop (where custom cursor is active) */
+@media (min-width: 769px) {
+    body,
+    body * {
+        cursor: none !important;
+    }
+}
+
 /* Custom cursor dot */
 .custom-cursor {
     position: fixed;
