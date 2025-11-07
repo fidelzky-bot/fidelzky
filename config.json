@@ -57,69 +57,75 @@
   ],
   "services": [
     {
-      "title": "Custom WordPress Development",
-      "icon": "⚙️",
-      "description": "Tailored WordPress solutions built from scratch to meet your unique business needs.",
-      "features": [
-        "Custom theme development",
-        "Plugin development",
-        "Performance optimization",
-        "Security hardening"
-      ]
-    },
-    {
-      "title": "WooCommerce Solutions",
-      "icon": "🛒",
-      "description": "Complete e-commerce solutions powered by WooCommerce for your online store.",
-      "features": [
-        "Store setup & configuration",
-        "Custom payment gateways",
-        "Product management",
-        "Order processing automation"
-      ]
-    },
-    {
-      "title": "WordPress Maintenance",
-      "icon": "🔧",
-      "description": "Ongoing support and maintenance to keep your WordPress site running smoothly.",
-      "features": [
-        "Regular updates",
-        "Backup management",
-        "Security monitoring",
-        "Performance tuning"
-      ]
-    },
-    {
-      "title": "Theme Customization",
+      "title": "Custom WordPress Theme & Vibe-Driven UI/UX Design",
       "icon": "🎨",
-      "description": "Transform existing themes to match your brand identity and requirements.",
+      "description": "Crafting unique WordPress themes with vibe-driven UI/UX that perfectly captures your brand's essence and creates memorable user experiences.",
       "features": [
-        "Design customization",
-        "Layout modifications",
-        "Functionality enhancements",
-        "Responsive optimization"
+        "Custom theme development from scratch",
+        "Vibe-driven design philosophy",
+        "User experience optimization",
+        "Responsive & mobile-first design",
+        "Brand identity integration"
       ]
     },
     {
-      "title": "API Integration",
-      "icon": "🔌",
-      "description": "Seamless integration with third-party services and APIs for enhanced functionality.",
+      "title": "Custom Plugin & Feature Development",
+      "icon": "⚙️",
+      "description": "Building custom WordPress plugins and features tailored to your specific needs, extending functionality with clean, efficient code.",
       "features": [
-        "REST API development",
-        "Third-party integrations",
-        "Webhook setup",
-        "Data synchronization"
+        "Custom plugin development",
+        "Feature implementation",
+        "WordPress best practices",
+        "Code optimization & security",
+        "Documentation & support"
       ]
     },
     {
-      "title": "Consulting & Support",
-      "icon": "💡",
-      "description": "Expert advice and technical support to help you make the best decisions.",
+      "title": "E-Commerce & Experience-Driven Storefronts on WordPress",
+      "icon": "🛒",
+      "description": "Creating experience-driven e-commerce storefronts on WordPress that convert visitors into customers with seamless shopping experiences.",
       "features": [
-        "Technical consulting",
-        "Code reviews",
-        "Best practices guidance",
-        "Training & documentation"
+        "WooCommerce customization",
+        "Storefront design & development",
+        "Checkout optimization",
+        "Payment gateway integration",
+        "Product management systems"
+      ]
+    },
+    {
+      "title": "Performance, Speed & Vibe Optimization",
+      "icon": "⚡",
+      "description": "Optimizing your WordPress site for blazing-fast performance while maintaining the perfect vibe and user experience.",
+      "features": [
+        "Speed optimization",
+        "Performance tuning",
+        "Caching strategies",
+        "Image optimization",
+        "Database optimization"
+      ]
+    },
+    {
+      "title": "Content Strategy, SEO & Visual Storytelling",
+      "icon": "📝",
+      "description": "Developing content strategies that combine SEO excellence with visual storytelling to engage audiences and drive results.",
+      "features": [
+        "SEO optimization",
+        "Content strategy development",
+        "Visual storytelling",
+        "Keyword research & implementation",
+        "Content creation guidance"
+      ]
+    },
+    {
+      "title": "Migration, Upgrades & Site Relaunch with Brand Vibe Refresh",
+      "icon": "🚀",
+      "description": "Seamlessly migrating, upgrading, and relaunching your WordPress site with a complete brand vibe refresh for a fresh start.",
+      "features": [
+        "Site migration & upgrades",
+        "Brand vibe refresh",
+        "Data migration & backup",
+        "Zero-downtime deployment",
+        "Post-launch support"
       ]
     }
   ],
