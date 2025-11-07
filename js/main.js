@@ -174,9 +174,8 @@ const formFeedback = document.getElementById('formFeedback');
 
 // Initialize EmailJS when DOM is ready
 if (typeof emailjs !== 'undefined') {
-    // Initialize with your public key (replace with your actual key)
-    // TODO: Uncomment and add your Public Key when you have it
-    // emailjs.init('YOUR_PUBLIC_KEY');
+    // Initialize with your public key
+    emailjs.init('VYRjmwUXq3TRxFDCC');
 }
 
 if (contactForm) {
