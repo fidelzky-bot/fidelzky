@@ -183,9 +183,21 @@ function renderTestimonials(testimonials) {
     const testimonialsGrid = document.getElementById('testimonialsGrid');
     if (!testimonialsGrid) return;
 
-    testimonialsGrid.innerHTML = testimonials.map(testimonial => `
-        <div class="testimonial-card">
-            <p class="testimonial-text">${testimonial.text || ''}</p>
+    const maxLength = 250; // Character limit before truncation
+
+    testimonialsGrid.innerHTML = testimonials.map((testimonial, index) => {
+        const fullText = testimonial.text || '';
+        const isLong = fullText.length > maxLength;
+        const truncatedText = isLong ? fullText.substring(0, maxLength) + '...' : fullText;
+        const cardId = `testimonial-${index}`;
+
+        return `
+        <div class="testimonial-card" id="${cardId}">
+            <p class="testimonial-text">
+                <span class="testimonial-text-short">${truncatedText}</span>
+                ${isLong ? `<span class="testimonial-text-full" style="display: none;">${fullText}</span>` : ''}
+            </p>
+            ${isLong ? `<button class="testimonial-read-more" onclick="toggleTestimonial(${index})">Read more</button>` : ''}
             <div class="testimonial-author">
                 <div class="testimonial-info">
                     <div class="testimonial-name">${testimonial.name || ''}</div>
@@ -193,8 +205,37 @@ function renderTestimonials(testimonials) {
                 </div>
             </div>
         </div>
-    `).join('');
+    `;
+    }).join('');
 }
+
+// Global function to toggle testimonial text
+window.toggleTestimonial = function(index) {
+    const card = document.getElementById(`testimonial-${index}`);
+    if (!card) return;
+
+    const shortText = card.querySelector('.testimonial-text-short');
+    const fullText = card.querySelector('.testimonial-text-full');
+    const button = card.querySelector('.testimonial-read-more');
+
+    if (!fullText || !button) return;
+
+    const isExpanded = fullText.style.display !== 'none';
+
+    if (isExpanded) {
+        // Collapse
+        shortText.style.display = 'inline';
+        fullText.style.display = 'none';
+        button.textContent = 'Read more';
+        button.classList.remove('expanded');
+    } else {
+        // Expand
+        shortText.style.display = 'none';
+        fullText.style.display = 'inline';
+        button.textContent = 'Read less';
+        button.classList.add('expanded');
+    }
+};
 
 function renderSocialLinks(socialLinks) {
     const socialLinksContainer = document.getElementById('socialLinks');
