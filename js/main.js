@@ -175,6 +175,7 @@ const formFeedback = document.getElementById('formFeedback');
 // Initialize EmailJS when DOM is ready
 if (typeof emailjs !== 'undefined') {
     // Initialize with your public key (replace with your actual key)
+    // TODO: Uncomment and add your Public Key when you have it
     // emailjs.init('YOUR_PUBLIC_KEY');
 }
 
@@ -195,9 +196,8 @@ if (contactForm) {
         formFeedback.style.color = 'var(--neon-cyan)';
 
         // Send email using EmailJS
-        // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID' with your actual IDs from EmailJS
         if (typeof emailjs !== 'undefined') {
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+            emailjs.send('service_p4vbrzb', 'template_81eruu4', {
                 from_name: formData.name,
                 from_email: formData.email,
                 message: formData.message,
