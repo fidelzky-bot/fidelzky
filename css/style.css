@@ -732,17 +732,19 @@ body {
     font-size: 0.9rem;
     cursor: pointer;
     padding: 0.5rem 0;
-    margin-bottom: var(--spacing-sm);
-    display: inline-block;
+    margin: var(--spacing-sm) 0;
+    display: block;
     transition: var(--transition-normal);
     text-decoration: underline;
-    text-decoration-color: transparent;
+    text-decoration-color: var(--neon-cyan);
+    opacity: 0.8;
 }
 
 .testimonial-read-more:hover {
     color: var(--neon-green);
     text-decoration-color: var(--neon-green);
     text-shadow: 0 0 10px var(--neon-green);
+    opacity: 1;
 }
 
 .testimonial-read-more.expanded {

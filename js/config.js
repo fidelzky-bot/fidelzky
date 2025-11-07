@@ -197,7 +197,7 @@ function renderTestimonials(testimonials) {
                 <span class="testimonial-text-short">${truncatedText}</span>
                 ${isLong ? `<span class="testimonial-text-full" style="display: none;">${fullText}</span>` : ''}
             </p>
-            ${isLong ? `<button class="testimonial-read-more" onclick="toggleTestimonial(${index})">Read more</button>` : ''}
+            ${isLong ? `<button class="testimonial-read-more" data-index="${index}">Read more</button>` : ''}
             <div class="testimonial-author">
                 <div class="testimonial-info">
                     <div class="testimonial-name">${testimonial.name || ''}</div>
@@ -207,10 +207,19 @@ function renderTestimonials(testimonials) {
         </div>
     `;
     }).join('');
+
+    // Add event listeners to all read more buttons
+    const readMoreButtons = testimonialsGrid.querySelectorAll('.testimonial-read-more');
+    readMoreButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const index = parseInt(this.getAttribute('data-index'));
+            toggleTestimonial(index);
+        });
+    });
 }
 
-// Global function to toggle testimonial text
-window.toggleTestimonial = function(index) {
+// Function to toggle testimonial text
+function toggleTestimonial(index) {
     const card = document.getElementById(`testimonial-${index}`);
     if (!card) return;
 
@@ -235,7 +244,7 @@ window.toggleTestimonial = function(index) {
         button.textContent = 'Read less';
         button.classList.add('expanded');
     }
-};
+}
 
 function renderSocialLinks(socialLinks) {
     const socialLinksContainer = document.getElementById('socialLinks');
