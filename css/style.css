@@ -463,6 +463,12 @@ body {
     overflow: hidden;
 }
 
+.moving-particle {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;

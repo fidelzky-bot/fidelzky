@@ -303,11 +303,127 @@ style.textContent = `
             opacity: 1;
         }
     }
+    @keyframes floatParticle {
+        0% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.3;
+        }
+        25% {
+            transform: translate(30px, -30px) scale(1.2);
+            opacity: 0.6;
+        }
+        50% {
+            transform: translate(-20px, -50px) scale(0.8);
+            opacity: 0.8;
+        }
+        75% {
+            transform: translate(-40px, -20px) scale(1.1);
+            opacity: 0.5;
+        }
+        100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.3;
+        }
+    }
+    @keyframes floatParticle2 {
+        0% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.4;
+        }
+        33% {
+            transform: translate(-40px, 30px) scale(1.3);
+            opacity: 0.7;
+        }
+        66% {
+            transform: translate(50px, -40px) scale(0.9);
+            opacity: 0.6;
+        }
+        100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.4;
+        }
+    }
+    @keyframes floatParticle3 {
+        0% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.2;
+        }
+        50% {
+            transform: translate(60px, 40px) scale(1.4);
+            opacity: 0.7;
+        }
+        100% {
+            transform: translate(0, 0) scale(1);
+            opacity: 0.2;
+        }
+    }
 `;
 document.head.appendChild(style);
 
 // Create particles after a delay
 setTimeout(createParticles, 1000);
+
+// ============================================
+// Moving Particles for All Sections (Except Hero)
+// ============================================
+
+function createMovingParticles(section) {
+    if (!section) return;
+    
+    // Neon colors palette
+    const particleColors = [
+        'rgba(0, 255, 255, 0.4)',   // cyan
+        'rgba(255, 0, 255, 0.4)',   // pink
+        'rgba(0, 255, 65, 0.4)',     // green
+        'rgba(176, 38, 255, 0.4)',  // purple
+        'rgba(255, 255, 0, 0.4)',    // yellow
+        'rgba(255, 107, 107, 0.4)'   // light pink
+    ];
+    
+    const particleCount = 30; // Fewer particles per section for performance
+    const animations = ['floatParticle', 'floatParticle2', 'floatParticle3'];
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'moving-particle';
+        
+        // Random properties
+        const size = 2 + Math.random() * 3; // 2-5px
+        const color = particleColors[Math.floor(Math.random() * particleColors.length)];
+        const animation = animations[Math.floor(Math.random() * animations.length)];
+        const duration = 8 + Math.random() * 12; // 8-20 seconds
+        const delay = Math.random() * 5; // 0-5 seconds delay
+        
+        particle.style.position = 'absolute';
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.background = color;
+        particle.style.borderRadius = '50%';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.boxShadow = `0 0 ${size * 2}px ${color}, 0 0 ${size * 4}px ${color}`;
+        particle.style.animation = `${animation} ${duration}s infinite ease-in-out`;
+        particle.style.animationDelay = delay + 's';
+        particle.style.pointerEvents = 'none';
+        particle.style.zIndex = '0';
+        
+        section.appendChild(particle);
+    }
+}
+
+// Create moving particles for all sections except hero
+function initMovingParticles() {
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach(section => {
+        // Skip hero section
+        if (section.id !== 'about') {
+            createMovingParticles(section);
+        }
+    });
+}
+
+// Initialize moving particles after page load
+setTimeout(initMovingParticles, 1500);
 
 // ============================================
 // Active Navigation Link
