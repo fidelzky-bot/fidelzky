@@ -79,16 +79,18 @@ function typeWriter(element, text, speed = 100) {
 // Initialize typing animation when config is loaded
 function initTypingAnimation() {
     const typingText = document.getElementById('typingText');
-    const heroTitle = document.getElementById('heroTitle');
+    const heroName = document.getElementById('heroName');
     
-    if (typingText && heroTitle) {
-        const text = heroTitle.textContent || 'WordPress Developer & Vibe Coder';
+    if (typingText && heroName) {
+        const text = heroName.textContent || 'Fidelzky';
+        // Clear heroName first, then animate in typingText
+        heroName.textContent = '';
         typeWriter(typingText, text, 80);
     }
 }
 
 // Wait for config to load
-setTimeout(initTypingAnimation, 500);
+setTimeout(initTypingAnimation, 1000);
 
 // ============================================
 // Code Background Animation

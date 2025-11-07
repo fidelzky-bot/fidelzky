@@ -43,7 +43,14 @@ function applyConfig() {
     const personal = portfolioConfig.personal || {};
     if (personal.name) {
         const heroName = document.getElementById('heroName');
-        if (heroName) heroName.textContent = personal.name;
+        if (heroName) {
+            // Fidelzky will be animated with typing effect in main.js
+            heroName.textContent = personal.name;
+        }
+    }
+    if (personal.fullName) {
+        const heroFullName = document.getElementById('heroFullName');
+        if (heroFullName) heroFullName.textContent = personal.fullName;
     }
     if (personal.title) {
         const heroTitle = document.getElementById('heroTitle');
@@ -105,7 +112,7 @@ function applyConfig() {
     const currentYear = new Date().getFullYear();
     const footerCopyright = document.getElementById('footerCopyright');
     if (footerCopyright) {
-        footerCopyright.textContent = `© ${currentYear}. Fidel "Fidelzky" Centeno. All Rights Reserved.`;
+        footerCopyright.textContent = `© ${currentYear}. Fidel <Fidelzky/> Centeno. All Rights Reserved.`;
     }
 }
 
