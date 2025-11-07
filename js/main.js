@@ -337,3 +337,126 @@ function updateActiveNavLink() {
 window.addEventListener('scroll', updateActiveNavLink);
 updateActiveNavLink();
 
+// ============================================
+// Cursor Trail Effect
+// ============================================
+
+// Only enable on desktop (not mobile)
+if (window.innerWidth > 768) {
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+    
+    // Create custom cursor dot
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+    
+    // Neon colors for trail
+    const trailColors = [
+        '#00ffff', // cyan
+        '#ff00ff', // pink
+        '#00ff41', // green
+        '#b026ff', // purple
+        '#ffff00', // yellow
+        '#ff6b6b'  // light pink
+    ];
+    
+    // Trail particles array
+    const trailParticles = [];
+    const maxTrailParticles = 15;
+    let lastTrailTime = 0;
+    const trailInterval = 30; // ms between particles
+    
+    // Update cursor position
+    function updateCursor() {
+        const dx = mouseX - cursorX;
+        const dy = mouseY - cursorY;
+        
+        cursorX += dx * 0.15;
+        cursorY += dy * 0.15;
+        
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        
+        requestAnimationFrame(updateCursor);
+    }
+    
+    // Create trail particle
+    function createTrailParticle(x, y) {
+        const particle = document.createElement('div');
+        particle.className = 'cursor-trail';
+        
+        // Random color from neon palette
+        const color = trailColors[Math.floor(Math.random() * trailColors.length)];
+        const size = 15 + Math.random() * 15; // 15-30px
+        
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        particle.style.background = `radial-gradient(circle, ${color}, transparent)`;
+        particle.style.boxShadow = `0 0 ${size}px ${color}, 0 0 ${size * 2}px ${color}`;
+        particle.style.opacity = '0.6';
+        
+        document.body.appendChild(particle);
+        
+        // Remove particle after animation
+        setTimeout(() => {
+            if (particle.parentNode) {
+                particle.parentNode.removeChild(particle);
+            }
+        }, 800);
+        
+        trailParticles.push(particle);
+        
+        // Limit number of particles
+        if (trailParticles.length > maxTrailParticles) {
+            const oldParticle = trailParticles.shift();
+            if (oldParticle && oldParticle.parentNode) {
+                oldParticle.parentNode.removeChild(oldParticle);
+            }
+        }
+    }
+    
+    // Mouse move handler
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Throttle trail creation
+        const now = Date.now();
+        if (now - lastTrailTime > trailInterval) {
+            createTrailParticle(e.clientX, e.clientY);
+            lastTrailTime = now;
+        }
+    });
+    
+    // Hide cursor on mouse leave
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+    });
+    
+    // Show cursor on mouse enter
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+    });
+    
+    // Start cursor animation
+    updateCursor();
+    
+    // Scale cursor on hover over interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, select');
+    interactiveElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'scale(1.5)';
+            cursor.style.background = 'var(--neon-pink)';
+        });
+        el.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'scale(1)';
+            cursor.style.background = 'var(--neon-cyan)';
+        });
+    });
+}
+
