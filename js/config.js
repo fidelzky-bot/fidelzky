@@ -1,0 +1,203 @@
+// Config loader - Fetches and applies config.json to the page
+let portfolioConfig = null;
+
+async function loadConfig() {
+    try {
+        const response = await fetch('config.json');
+        if (!response.ok) {
+            throw new Error('Failed to load config.json');
+        }
+        portfolioConfig = await response.json();
+        applyConfig();
+    } catch (error) {
+        console.error('Error loading config:', error);
+        // Use default fallback data if config fails to load
+        portfolioConfig = getDefaultConfig();
+        applyConfig();
+    }
+}
+
+function getDefaultConfig() {
+    return {
+        personal: {
+            name: "Your Name",
+            title: "WordPress Developer & Vibe Coder",
+            bio: "Passionate WordPress developer crafting digital experiences with code and creativity.",
+            avatar: "https://via.placeholder.com/300"
+        },
+        skills: [],
+        projects: [],
+        testimonials: [],
+        contact: {
+            email: "your.email@example.com",
+            phone: "+1 (555) 123-4567",
+            social: []
+        }
+    };
+}
+
+function applyConfig() {
+    if (!portfolioConfig) return;
+
+    // Apply personal info
+    const personal = portfolioConfig.personal || {};
+    if (personal.name) {
+        const heroName = document.getElementById('heroName');
+        if (heroName) heroName.textContent = personal.name;
+    }
+    if (personal.title) {
+        const heroTitle = document.getElementById('heroTitle');
+        if (heroTitle) heroTitle.textContent = personal.title;
+    }
+    if (personal.bio) {
+        const heroBio = document.getElementById('heroBio');
+        if (heroBio) heroBio.textContent = personal.bio;
+    }
+    if (personal.avatar) {
+        const heroAvatar = document.getElementById('heroAvatar');
+        if (heroAvatar) heroAvatar.src = personal.avatar;
+    }
+
+    // Apply skills
+    if (portfolioConfig.skills && Array.isArray(portfolioConfig.skills)) {
+        renderSkills(portfolioConfig.skills);
+    }
+
+    // Apply projects
+    if (portfolioConfig.projects && Array.isArray(portfolioConfig.projects)) {
+        renderProjects(portfolioConfig.projects);
+    }
+
+    // Apply testimonials
+    if (portfolioConfig.testimonials && Array.isArray(portfolioConfig.testimonials)) {
+        renderTestimonials(portfolioConfig.testimonials);
+    }
+
+    // Apply contact info
+    const contact = portfolioConfig.contact || {};
+    if (contact.email) {
+        const contactEmail = document.getElementById('contactEmail');
+        if (contactEmail) contactEmail.textContent = contact.email;
+    }
+    if (contact.phone) {
+        const contactPhone = document.getElementById('contactPhone');
+        if (contactPhone) contactPhone.textContent = contact.phone;
+    }
+    if (contact.social && Array.isArray(contact.social)) {
+        renderSocialLinks(contact.social);
+    }
+
+    // Apply footer copyright
+    const currentYear = new Date().getFullYear();
+    const footerCopyright = document.getElementById('footerCopyright');
+    if (footerCopyright) {
+        footerCopyright.textContent = `© ${currentYear} ${personal.name || 'Portfolio'}`;
+    }
+}
+
+function renderSkills(skills) {
+    const skillsGrid = document.getElementById('skillsGrid');
+    if (!skillsGrid) return;
+
+    skillsGrid.innerHTML = skills.map(skill => `
+        <div class="skill-card">
+            <div class="skill-header">
+                <span class="skill-name">${skill.name || 'Skill'}</span>
+                <span class="skill-level">${skill.level || 0}%</span>
+            </div>
+            <div class="skill-bar-container">
+                <div class="skill-bar" style="width: ${skill.level || 0}%"></div>
+            </div>
+        </div>
+    `).join('');
+
+    // Animate skill bars on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skillBar = entry.target.querySelector('.skill-bar');
+                if (skillBar) {
+                    const width = skillBar.style.width;
+                    skillBar.style.width = '0%';
+                    setTimeout(() => {
+                        skillBar.style.width = width;
+                    }, 100);
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.skill-card').forEach(card => {
+        observer.observe(card);
+    });
+}
+
+function renderProjects(projects) {
+    const projectsGrid = document.getElementById('projectsGrid');
+    if (!projectsGrid) return;
+
+    projectsGrid.innerHTML = projects.map(project => `
+        <div class="project-card">
+            ${project.image ? `<img src="${project.image}" alt="${project.title}" class="project-image">` : ''}
+            <div class="project-content">
+                <h3 class="project-title">${project.title || 'Project'}</h3>
+                <p class="project-description">${project.description || ''}</p>
+                ${project.tech && project.tech.length > 0 ? `
+                    <div class="project-tech">
+                        ${project.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    </div>
+                ` : ''}
+                <div class="project-links">
+                    ${project.demo ? `<a href="${project.demo}" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo</a>` : ''}
+                    ${project.github ? `<a href="${project.github}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>` : ''}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderTestimonials(testimonials) {
+    const testimonialsGrid = document.getElementById('testimonialsGrid');
+    if (!testimonialsGrid) return;
+
+    testimonialsGrid.innerHTML = testimonials.map(testimonial => `
+        <div class="testimonial-card">
+            <p class="testimonial-text">${testimonial.text || ''}</p>
+            <div class="testimonial-author">
+                ${testimonial.avatar ? `<img src="${testimonial.avatar}" alt="${testimonial.name}" class="testimonial-avatar">` : ''}
+                <div class="testimonial-info">
+                    <div class="testimonial-name">${testimonial.name || ''}</div>
+                    <div class="testimonial-role">${testimonial.role || ''}${testimonial.company ? ` at ${testimonial.company}` : ''}</div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderSocialLinks(socialLinks) {
+    const socialLinksContainer = document.getElementById('socialLinks');
+    if (!socialLinksContainer) return;
+
+    const iconMap = {
+        'github': '🔗',
+        'linkedin': '🔗',
+        'twitter': '🔗',
+        'instagram': '🔗',
+        'facebook': '🔗',
+        'email': '✉️'
+    };
+
+    socialLinksContainer.innerHTML = socialLinks.map(link => `
+        <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="social-link" title="${link.name}">
+            ${iconMap[link.name.toLowerCase()] || '🔗'}
+        </a>
+    `).join('');
+}
+
+// Load config when DOM is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadConfig);
+} else {
+    loadConfig();
+}
+

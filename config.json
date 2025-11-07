@@ -1,0 +1,161 @@
+{
+  "personal": {
+    "name": "Fidelzky",
+    "title": "WordPress Developer & Vibe Coder",
+    "bio": "Passionate WordPress developer crafting digital experiences with clean code and creative solutions. Specializing in custom themes, plugin development, and performance optimization. Always coding with good vibes!",
+    "avatar": "https://via.placeholder.com/300"
+  },
+  "skills": [
+    {
+      "name": "WordPress",
+      "level": 95
+    },
+    {
+      "name": "PHP",
+      "level": 90
+    },
+    {
+      "name": "JavaScript",
+      "level": 85
+    },
+    {
+      "name": "CSS/SCSS",
+      "level": 90
+    },
+    {
+      "name": "HTML5",
+      "level": 95
+    },
+    {
+      "name": "React",
+      "level": 75
+    },
+    {
+      "name": "Node.js",
+      "level": 70
+    },
+    {
+      "name": "Git",
+      "level": 85
+    },
+    {
+      "name": "WooCommerce",
+      "level": 80
+    },
+    {
+      "name": "REST API",
+      "level": 75
+    },
+    {
+      "name": "MySQL",
+      "level": 80
+    },
+    {
+      "name": "Docker",
+      "level": 65
+    }
+  ],
+  "projects": [
+    {
+      "title": "Custom WordPress Theme",
+      "description": "A fully responsive, custom WordPress theme built from scratch with modern design principles and optimized performance.",
+      "image": "https://via.placeholder.com/600x400/00ffff/000000?text=WordPress+Theme",
+      "tech": ["WordPress", "PHP", "CSS", "JavaScript"],
+      "demo": "https://example.com",
+      "github": "https://github.com/example"
+    },
+    {
+      "title": "E-Commerce Plugin",
+      "description": "Custom WooCommerce extension for enhanced product management and checkout experience.",
+      "image": "https://via.placeholder.com/600x400/b026ff/ffffff?text=E-Commerce+Plugin",
+      "tech": ["WordPress", "WooCommerce", "PHP", "JavaScript"],
+      "demo": "https://example.com",
+      "github": "https://github.com/example"
+    },
+    {
+      "title": "Headless WordPress API",
+      "description": "RESTful API implementation for headless WordPress architecture with React frontend.",
+      "image": "https://via.placeholder.com/600x400/00ff41/000000?text=Headless+WP",
+      "tech": ["WordPress", "REST API", "React", "Node.js"],
+      "demo": "https://example.com",
+      "github": "https://github.com/example"
+    },
+    {
+      "title": "Custom Gutenberg Blocks",
+      "description": "Collection of custom Gutenberg blocks for enhanced content editing experience.",
+      "image": "https://via.placeholder.com/600x400/ff00ff/ffffff?text=Gutenberg+Blocks",
+      "tech": ["WordPress", "Gutenberg", "React", "JavaScript"],
+      "demo": "https://example.com",
+      "github": "https://github.com/example"
+    },
+    {
+      "title": "Performance Optimization Tool",
+      "description": "WordPress plugin for automated performance optimization including image compression and caching.",
+      "image": "https://via.placeholder.com/600x400/00ffff/000000?text=Performance+Tool",
+      "tech": ["WordPress", "PHP", "JavaScript"],
+      "demo": "https://example.com",
+      "github": "https://github.com/example"
+    },
+    {
+      "title": "Multisite Management Dashboard",
+      "description": "Custom dashboard for managing multiple WordPress sites from a single interface.",
+      "image": "https://via.placeholder.com/600x400/b026ff/ffffff?text=Multisite+Dashboard",
+      "tech": ["WordPress", "PHP", "MySQL", "JavaScript"],
+      "demo": "https://example.com",
+      "github": "https://github.com/example"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "John Doe",
+      "role": "CEO",
+      "company": "Tech Startup Inc.",
+      "text": "Fidelzky delivered an exceptional WordPress solution that exceeded our expectations. The code quality and attention to detail is outstanding!",
+      "avatar": "https://via.placeholder.com/100"
+    },
+    {
+      "name": "Jane Smith",
+      "role": "Marketing Director",
+      "company": "Creative Agency",
+      "text": "Working with Fidelzky was a breeze. The custom theme they built perfectly captures our brand identity and performs flawlessly.",
+      "avatar": "https://via.placeholder.com/100"
+    },
+    {
+      "name": "Mike Johnson",
+      "role": "Founder",
+      "company": "E-Commerce Solutions",
+      "text": "The WooCommerce extension Fidelzky developed has significantly improved our checkout process. Highly recommended!",
+      "avatar": "https://via.placeholder.com/100"
+    },
+    {
+      "name": "Sarah Williams",
+      "role": "Project Manager",
+      "company": "Digital Solutions",
+      "text": "Professional, responsive, and incredibly skilled. Fidelzky transformed our WordPress site into a modern, high-performance platform.",
+      "avatar": "https://via.placeholder.com/100"
+    }
+  ],
+  "contact": {
+    "email": "your.email@example.com",
+    "phone": "+1 (555) 123-4567",
+    "social": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/yourusername"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://linkedin.com/in/yourusername"
+      },
+      {
+        "name": "Twitter",
+        "url": "https://twitter.com/yourusername"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:your.email@example.com"
+      }
+    ]
+  }
+}
+
