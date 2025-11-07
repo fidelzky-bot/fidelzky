@@ -11,8 +11,13 @@ The contact form is now configured to use EmailJS to send emails to **hello.soar
 ### 2. Create Email Service
 1. Go to **Email Services** in the dashboard
 2. Click **Add New Service**
-3. Choose **Gmail** (or your preferred email provider)
-4. Connect your Gmail account (hello.soarmediadigital@gmail.com)
+3. Choose your email provider:
+   - **Gmail** - Works with any Gmail account (no app needed, just web access)
+   - **Outlook** - Works with Outlook/Hotmail accounts
+   - **Custom SMTP** - Works with any email provider (requires SMTP settings)
+4. Connect your email account (hello.soarmediadigital@gmail.com)
+   - For Gmail: Just sign in with your Google account
+   - No Gmail app needed - works through web browser
 5. Copy the **Service ID** (you'll need this)
 
 ### 3. Create Email Template
@@ -64,6 +69,8 @@ Open `js/main.js` and replace these placeholders:
 ## Current Configuration:
 - **Recipient Email:** hello.soarmediadigital@gmail.com
 - **Service:** EmailJS (free tier: 100 emails/month)
+- **Works with:** Gmail, Outlook, or any email provider via SMTP
+- **No app needed:** Works through web browser - you don't need the Gmail app installed
 
 ## Alternative: Formspree
 If you prefer Formspree instead:
