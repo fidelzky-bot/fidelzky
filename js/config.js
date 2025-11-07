@@ -265,7 +265,8 @@ function renderSocialLinks(socialLinks) {
         'twitter': '🔗',
         'instagram': '🔗',
         'facebook': '🔗',
-        'email': '✉️'
+        'email': '✉️',
+        'phone': '📞'
     };
 
     socialLinksContainer.innerHTML = socialLinks.map(link => `
