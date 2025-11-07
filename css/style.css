@@ -1009,6 +1009,7 @@ body {
 .footer-copyright {
     font-size: 0.9rem;
     color: var(--text-muted);
+    line-height: 1.6;
 }
 
 /* ============================================

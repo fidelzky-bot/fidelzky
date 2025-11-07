@@ -112,7 +112,7 @@ function applyConfig() {
     const currentYear = new Date().getFullYear();
     const footerCopyright = document.getElementById('footerCopyright');
     if (footerCopyright) {
-        footerCopyright.textContent = `© ${currentYear}. Fidel <Fidelzky/> Centeno. All Rights Reserved.`;
+        footerCopyright.innerHTML = `© ${currentYear}. Fidel <Fidelzky/> Centeno.<br>All Rights Reserved.`;
     }
 }
 
