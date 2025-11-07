@@ -296,10 +296,48 @@ function renderSocialLinks(socialLinks) {
     }).join('');
 }
 
+// Hide preloader and show content when everything is loaded
+function hidePreloader() {
+    const preloader = document.getElementById('preloader');
+    const body = document.body;
+    
+    if (preloader) {
+        preloader.classList.add('hidden');
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }
+    
+    if (body) {
+        body.classList.add('loaded');
+    }
+}
+
 // Load config when DOM is ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadConfig);
+    document.addEventListener('DOMContentLoaded', () => {
+        loadConfig();
+        // Wait for fonts and content to load
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(() => {
+                setTimeout(hidePreloader, 300);
+            });
+        } else {
+            window.addEventListener('load', () => {
+                setTimeout(hidePreloader, 300);
+            });
+        }
+    });
 } else {
     loadConfig();
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => {
+            setTimeout(hidePreloader, 300);
+        });
+    } else {
+        window.addEventListener('load', () => {
+            setTimeout(hidePreloader, 300);
+        });
+    }
 }
 
