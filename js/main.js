@@ -97,10 +97,12 @@ function initTypingAnimation() {
             typeWriter(typingText, titleText, 60);
         }, nameDuration + 1000);
         
-        // Display Fidelzky with code symbols in hero-name after first typing completes
+        // Display Fidelzky with code symbols in hero-name with typing animation
         setTimeout(() => {
             if (heroName) {
-                heroName.textContent = `<${nameText}/>`;
+                const codeText = `<${nameText}/>`;
+                // Type out the code-style name with animation
+                typeWriter(heroName, codeText, 100);
             }
         }, nameDuration + 500);
     }
