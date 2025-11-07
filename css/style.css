@@ -93,13 +93,13 @@ body {
 .nav-logo {
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 60px;
 }
 
 .logo-image {
     height: 100%;
     width: auto;
-    max-height: 40px;
+    max-height: 60px;
     object-fit: contain;
     transition: var(--transition-normal);
 }
