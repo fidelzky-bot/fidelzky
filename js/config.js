@@ -55,7 +55,16 @@ function applyConfig() {
     }
     if (personal.avatar) {
         const heroAvatar = document.getElementById('heroAvatar');
-        if (heroAvatar) heroAvatar.src = personal.avatar;
+        if (heroAvatar) {
+            // Handle spaces in filename by encoding the path
+            const avatarPath = personal.avatar.replace(/ /g, '%20');
+            heroAvatar.src = avatarPath;
+            heroAvatar.onerror = function() {
+                // Fallback if image fails to load
+                console.error('Failed to load avatar:', avatarPath);
+                this.src = personal.avatar; // Try original path
+            };
+        }
     }
 
     // Apply skills
