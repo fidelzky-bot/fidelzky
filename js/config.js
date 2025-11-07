@@ -102,10 +102,9 @@ function applyConfig() {
     }
 
     // Apply footer copyright
-    const currentYear = new Date().getFullYear();
     const footerCopyright = document.getElementById('footerCopyright');
     if (footerCopyright) {
-        footerCopyright.textContent = `© ${currentYear} ${personal.name || 'Portfolio'}`;
+        footerCopyright.textContent = `© 2025. Fidel "Fidelzky" Centeno. All Rights Reserved.`;
     }
 }
 
