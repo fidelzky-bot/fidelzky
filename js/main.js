@@ -80,19 +80,29 @@ function typeWriter(element, text, speed = 100) {
 function initTypingAnimation() {
     const typingText = document.getElementById('typingText');
     const heroName = document.getElementById('heroName');
+    const heroTitle = document.getElementById('heroTitle');
     
-    if (typingText && heroName) {
-        const text = heroName.textContent || 'Fidelzky';
-        // Animate Fidelzky in the terminal
-        typeWriter(typingText, text, 80);
+    if (typingText && heroName && heroTitle) {
+        const nameText = heroName.textContent || 'Fidelzky';
+        const titleText = heroTitle.textContent || 'WordPress Developer & Vibe Coder';
         
-        // After typing completes, also display in hero-name
-        const typingDuration = text.length * 80;
+        // First, type "Fidelzky"
+        typeWriter(typingText, nameText, 80);
+        
+        // After Fidelzky finishes, type the title
+        const nameDuration = nameText.length * 80;
+        setTimeout(() => {
+            // Clear and type the title
+            typingText.textContent = '';
+            typeWriter(typingText, titleText, 60);
+        }, nameDuration + 1000);
+        
+        // Display Fidelzky with code symbols in hero-name after first typing completes
         setTimeout(() => {
             if (heroName) {
-                heroName.textContent = text;
+                heroName.textContent = `<${nameText}/>`;
             }
-        }, typingDuration + 500);
+        }, nameDuration + 500);
     }
 }
 
