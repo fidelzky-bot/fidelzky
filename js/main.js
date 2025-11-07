@@ -115,8 +115,8 @@ setTimeout(initTypingAnimation, 1000);
 // Code Background Animation
 // ============================================
 
-function generateCodeBackground() {
-    const codeBackground = document.getElementById('codeBackground');
+function generateCodeBackground(elementId, snippetCount = 15) {
+    const codeBackground = document.getElementById(elementId);
     if (!codeBackground) return;
 
     const codeSnippets = [
@@ -139,18 +139,32 @@ function generateCodeBackground() {
         '.portfolio {',
         '  display: grid;',
         '  grid-template-columns: 1fr;',
+        '}',
+        '',
+        'const skills = [',
+        '  "WordPress", "PHP", "JS"',
+        '];',
+        '',
+        'function build() {',
+        '  return "success";',
         '}'
     ];
 
     let codeText = '';
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < snippetCount; i++) {
         codeText += codeSnippets[Math.floor(Math.random() * codeSnippets.length)] + '\n';
     }
 
     codeBackground.textContent = codeText;
 }
 
-generateCodeBackground();
+// Generate code backgrounds for all sections
+generateCodeBackground('codeBackground', 20); // Hero section
+generateCodeBackground('codeBackgroundSkills', 12);
+generateCodeBackground('codeBackgroundServices', 12);
+generateCodeBackground('codeBackgroundProjects', 12);
+generateCodeBackground('codeBackgroundTestimonials', 12);
+generateCodeBackground('codeBackgroundContact', 12);
 
 // ============================================
 // Scroll Animations

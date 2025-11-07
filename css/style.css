@@ -420,14 +420,18 @@ body {
    ============================================ */
 
 .skills {
+    position: relative;
     padding: var(--spacing-xl) 0;
     background: var(--bg-secondary);
+    overflow: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
@@ -522,8 +526,10 @@ body {
    ============================================ */
 
 .services {
+    position: relative;
     padding: var(--spacing-xl) 0;
     background: var(--bg-primary);
+    overflow: hidden;
 }
 
 .services-grid {
@@ -631,7 +637,9 @@ body {
    ============================================ */
 
 .projects {
+    position: relative;
     padding: var(--spacing-xl) 0;
+    overflow: hidden;
 }
 
 .projects-grid {
@@ -755,8 +763,10 @@ body {
    ============================================ */
 
 .testimonials {
+    position: relative;
     padding: var(--spacing-xl) 0;
     background: var(--bg-secondary);
+    overflow: hidden;
 }
 
 .testimonials-grid {
@@ -868,7 +878,9 @@ body {
    ============================================ */
 
 .contact {
+    position: relative;
     padding: var(--spacing-xl) 0;
+    overflow: hidden;
 }
 
 .contact-content {
