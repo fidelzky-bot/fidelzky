@@ -91,16 +91,22 @@ body {
 }
 
 .nav-logo {
-    font-family: var(--font-mono);
-    font-size: 1.2rem;
-    color: var(--neon-cyan);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    height: 40px;
 }
 
-.terminal-prompt {
-    color: var(--neon-green);
+.logo-image {
+    height: 100%;
+    width: auto;
+    max-height: 40px;
+    object-fit: contain;
+    transition: var(--transition-normal);
+}
+
+.logo-image:hover {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 5px var(--neon-cyan));
 }
 
 .nav-menu {
