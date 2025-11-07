@@ -165,8 +165,18 @@ setTimeout(() => {
 // Contact Form
 // ============================================
 
+// Initialize EmailJS (you'll need to get your public key from EmailJS dashboard)
+// Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+// Get it from: https://dashboard.emailjs.com/admin/integration
+
 const contactForm = document.getElementById('contactForm');
 const formFeedback = document.getElementById('formFeedback');
+
+// Initialize EmailJS when DOM is ready
+if (typeof emailjs !== 'undefined') {
+    // Initialize with your public key (replace with your actual key)
+    // emailjs.init('YOUR_PUBLIC_KEY');
+}
 
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
@@ -178,36 +188,46 @@ if (contactForm) {
             message: document.getElementById('message').value
         };
 
-        // Simulate form submission (replace with actual form handling)
-        formFeedback.className = 'form-feedback success';
-        formFeedback.textContent = '$ Message sent successfully!';
+        // Show loading state
+        formFeedback.className = 'form-feedback';
+        formFeedback.textContent = '$ Sending...';
         formFeedback.style.display = 'block';
+        formFeedback.style.color = 'var(--neon-cyan)';
 
-        // Reset form
-        contactForm.reset();
-
-        // Hide feedback after 5 seconds
-        setTimeout(() => {
-            formFeedback.style.display = 'none';
-        }, 5000);
-
-        // In a real implementation, you would send this to a server:
-        // fetch('/api/contact', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(formData)
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     formFeedback.className = 'form-feedback success';
-        //     formFeedback.textContent = '$ ' + data.message;
-        //     formFeedback.style.display = 'block';
-        // })
-        // .catch(error => {
-        //     formFeedback.className = 'form-feedback error';
-        //     formFeedback.textContent = '$ Error: ' + error.message;
-        //     formFeedback.style.display = 'block';
-        // });
+        // Send email using EmailJS
+        // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID' with your actual IDs from EmailJS
+        if (typeof emailjs !== 'undefined') {
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+                from_name: formData.name,
+                from_email: formData.email,
+                message: formData.message,
+                to_email: 'hello.soarmediadigital@gmail.com'
+            })
+            .then(() => {
+                formFeedback.className = 'form-feedback success';
+                formFeedback.textContent = '$ Message sent successfully!';
+                formFeedback.style.display = 'block';
+                
+                // Reset form
+                contactForm.reset();
+                
+                // Hide feedback after 5 seconds
+                setTimeout(() => {
+                    formFeedback.style.display = 'none';
+                }, 5000);
+            })
+            .catch((error) => {
+                formFeedback.className = 'form-feedback error';
+                formFeedback.textContent = '$ Error: Failed to send message. Please try again or email directly.';
+                formFeedback.style.display = 'block';
+                console.error('EmailJS Error:', error);
+            });
+        } else {
+            // Fallback if EmailJS is not loaded
+            formFeedback.className = 'form-feedback error';
+            formFeedback.textContent = '$ Email service not configured. Please email directly at hello.soarmediadigital@gmail.com';
+            formFeedback.style.display = 'block';
+        }
     });
 }
 
