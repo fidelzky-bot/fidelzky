@@ -438,7 +438,7 @@ body {
     display: flex;
     gap: var(--spacing-sm);
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .btn {
