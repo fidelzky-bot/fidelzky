@@ -154,9 +154,9 @@ document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
 });
 
-// Observe project and testimonial cards
+// Observe project, testimonial, and service cards
 setTimeout(() => {
-    document.querySelectorAll('.project-card, .testimonial-card, .skill-card').forEach(card => {
+    document.querySelectorAll('.project-card, .testimonial-card, .skill-card, .service-card').forEach(card => {
         observer.observe(card);
     });
 }, 1000);

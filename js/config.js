@@ -63,6 +63,11 @@ function applyConfig() {
         renderSkills(portfolioConfig.skills);
     }
 
+    // Apply services
+    if (portfolioConfig.services && Array.isArray(portfolioConfig.services)) {
+        renderServices(portfolioConfig.services);
+    }
+
     // Apply projects
     if (portfolioConfig.projects && Array.isArray(portfolioConfig.projects)) {
         renderProjects(portfolioConfig.projects);
@@ -130,6 +135,24 @@ function renderSkills(skills) {
     document.querySelectorAll('.skill-card').forEach(card => {
         observer.observe(card);
     });
+}
+
+function renderServices(services) {
+    const servicesGrid = document.getElementById('servicesGrid');
+    if (!servicesGrid) return;
+
+    servicesGrid.innerHTML = services.map(service => `
+        <div class="service-card">
+            <span class="service-icon">${service.icon || '⚙️'}</span>
+            <h3 class="service-title">${service.title || 'Service'}</h3>
+            <p class="service-description">${service.description || ''}</p>
+            ${service.features && service.features.length > 0 ? `
+                <ul class="service-features">
+                    ${service.features.map(feature => `<li class="service-feature">${feature}</li>`).join('')}
+                </ul>
+            ` : ''}
+        </div>
+    `).join('');
 }
 
 function renderProjects(projects) {
