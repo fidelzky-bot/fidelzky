@@ -131,52 +131,28 @@
   ],
   "projects": [
     {
-      "title": "Custom WordPress Theme",
-      "description": "A fully responsive, custom WordPress theme built from scratch with modern design principles and optimized performance.",
-      "image": "https://via.placeholder.com/600x400/00ffff/000000?text=WordPress+Theme",
-      "tech": ["WordPress", "PHP", "CSS", "JavaScript"],
-      "demo": "https://example.com",
-      "github": "https://github.com/example"
+      "title": "FotoBrain",
+      "description": "A modern photography and image processing platform built with WordPress, featuring advanced image management, gallery systems, and user-friendly interfaces for photographers and visual content creators.",
+      "image": "https://via.placeholder.com/600x400/00ffff/000000?text=FotoBrain",
+      "tech": ["WordPress", "PHP", "JavaScript", "CSS"],
+      "demo": "https://fotobrain.com/",
+      "github": ""
     },
     {
-      "title": "E-Commerce Plugin",
-      "description": "Custom WooCommerce extension for enhanced product management and checkout experience.",
-      "image": "https://via.placeholder.com/600x400/b026ff/ffffff?text=E-Commerce+Plugin",
-      "tech": ["WordPress", "WooCommerce", "PHP", "JavaScript"],
-      "demo": "https://example.com",
-      "github": "https://github.com/example"
+      "title": "ChatLLM - FetchLawyer",
+      "description": "An AI-powered legal chatbot platform built with Large Language Model technology, providing intelligent legal assistance and consultation services through conversational interfaces for legal professionals and clients.",
+      "image": "https://via.placeholder.com/600x400/b026ff/ffffff?text=ChatLLM",
+      "tech": ["WordPress", "AI/LLM", "JavaScript", "API Integration"],
+      "demo": "https://chatllm.fetchlawyer.com/",
+      "github": ""
     },
     {
-      "title": "Headless WordPress API",
-      "description": "RESTful API implementation for headless WordPress architecture with React frontend.",
-      "image": "https://via.placeholder.com/600x400/00ff41/000000?text=Headless+WP",
-      "tech": ["WordPress", "REST API", "React", "Node.js"],
-      "demo": "https://example.com",
-      "github": "https://github.com/example"
-    },
-    {
-      "title": "Custom Gutenberg Blocks",
-      "description": "Collection of custom Gutenberg blocks for enhanced content editing experience.",
-      "image": "https://via.placeholder.com/600x400/ff00ff/ffffff?text=Gutenberg+Blocks",
-      "tech": ["WordPress", "Gutenberg", "React", "JavaScript"],
-      "demo": "https://example.com",
-      "github": "https://github.com/example"
-    },
-    {
-      "title": "Performance Optimization Tool",
-      "description": "WordPress plugin for automated performance optimization including image compression and caching.",
-      "image": "https://via.placeholder.com/600x400/00ffff/000000?text=Performance+Tool",
-      "tech": ["WordPress", "PHP", "JavaScript"],
-      "demo": "https://example.com",
-      "github": "https://github.com/example"
-    },
-    {
-      "title": "Multisite Management Dashboard",
-      "description": "Custom dashboard for managing multiple WordPress sites from a single interface.",
-      "image": "https://via.placeholder.com/600x400/b026ff/ffffff?text=Multisite+Dashboard",
-      "tech": ["WordPress", "PHP", "MySQL", "JavaScript"],
-      "demo": "https://example.com",
-      "github": "https://github.com/example"
+      "title": "Lawyerix",
+      "description": "A comprehensive legal services platform and lawyer directory built on WordPress, connecting clients with legal professionals through an intuitive interface with search, booking, and consultation features.",
+      "image": "https://via.placeholder.com/600x400/00ff41/000000?text=Lawyerix",
+      "tech": ["WordPress", "PHP", "JavaScript", "MySQL"],
+      "demo": "https://lawyerix.com/",
+      "github": ""
     }
   ],
   "testimonials": [
