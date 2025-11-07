@@ -83,9 +83,16 @@ function initTypingAnimation() {
     
     if (typingText && heroName) {
         const text = heroName.textContent || 'Fidelzky';
-        // Clear heroName first, then animate in typingText
-        heroName.textContent = '';
+        // Animate Fidelzky in the terminal
         typeWriter(typingText, text, 80);
+        
+        // After typing completes, also display in hero-name
+        const typingDuration = text.length * 80;
+        setTimeout(() => {
+            if (heroName) {
+                heroName.textContent = text;
+            }
+        }, typingDuration + 500);
     }
 }
 
