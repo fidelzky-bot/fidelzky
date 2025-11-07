@@ -849,6 +849,11 @@ body {
     font-size: 1.5rem;
 }
 
+.social-link i {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
 .social-link:hover {
     border-color: var(--neon-cyan);
     box-shadow: var(--glow-cyan);

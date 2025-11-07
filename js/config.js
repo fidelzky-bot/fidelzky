@@ -260,21 +260,22 @@ function renderSocialLinks(socialLinks) {
     if (!socialLinksContainer) return;
 
     const iconMap = {
-        'github': '🔗',
-        'linkedin': '🔗',
-        'twitter': '🔗',
-        'instagram': '🔗',
-        'facebook': '🔗',
-        'email': '✉️',
-        'phone': '📞'
+        'github': '<i class="fab fa-github"></i>',
+        'linkedin': '<i class="fab fa-linkedin"></i>',
+        'twitter': '<i class="fab fa-twitter"></i>',
+        'instagram': '<i class="fab fa-instagram"></i>',
+        'facebook': '<i class="fab fa-facebook"></i>',
+        'email': '<i class="fas fa-envelope"></i>',
+        'phone': '<i class="fas fa-phone"></i>'
     };
 
     socialLinksContainer.innerHTML = socialLinks.map(link => {
         const isMailOrPhone = link.url.startsWith('mailto:') || link.url.startsWith('tel:');
         const targetAttr = isMailOrPhone ? '' : 'target="_blank" rel="noopener noreferrer"';
+        const icon = iconMap[link.name.toLowerCase()] || '<i class="fas fa-link"></i>';
         return `
         <a href="${link.url}" ${targetAttr} class="social-link" title="${link.name}">
-            ${iconMap[link.name.toLowerCase()] || '🔗'}
+            ${icon}
         </a>
     `;
     }).join('');
