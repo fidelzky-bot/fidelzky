@@ -309,7 +309,7 @@ body {
     margin-bottom: var(--spacing-md);
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.3rem;
 }
 
@@ -1093,6 +1093,7 @@ body {
 
     .hero-title {
         font-size: 1.2rem;
+        align-items: center;
     }
 
     .hero-title-main {
