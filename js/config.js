@@ -269,11 +269,15 @@ function renderSocialLinks(socialLinks) {
         'phone': '📞'
     };
 
-    socialLinksContainer.innerHTML = socialLinks.map(link => `
-        <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="social-link" title="${link.name}">
+    socialLinksContainer.innerHTML = socialLinks.map(link => {
+        const isMailOrPhone = link.url.startsWith('mailto:') || link.url.startsWith('tel:');
+        const targetAttr = isMailOrPhone ? '' : 'target="_blank" rel="noopener noreferrer"';
+        return `
+        <a href="${link.url}" ${targetAttr} class="social-link" title="${link.name}">
             ${iconMap[link.name.toLowerCase()] || '🔗'}
         </a>
-    `).join('');
+    `;
+    }).join('');
 }
 
 // Load config when DOM is ready
