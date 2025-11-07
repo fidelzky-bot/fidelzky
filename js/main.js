@@ -562,16 +562,30 @@ if (window.innerWidth > 768) {
     // Start cursor animation
     updateCursor();
     
-    // Scale cursor on hover over interactive elements
-    const interactiveElements = document.querySelectorAll('a, button, input, textarea, select');
+    // Enhanced cursor effects on hover over interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .btn');
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            cursor.style.transform = 'scale(1.5)';
-            cursor.style.background = 'var(--neon-pink)';
+            cursor.classList.add('cursor-hover');
+            cursor.style.transform = 'translate(-50%, -50%) scale(2)';
+            cursor.style.borderColor = 'var(--neon-pink)';
+            cursor.style.boxShadow = 
+                '0 0 15px var(--neon-pink), ' +
+                '0 0 30px var(--neon-pink), ' +
+                '0 0 45px var(--neon-pink), ' +
+                'inset 0 0 15px var(--neon-pink)';
+            cursor.style.background = 'radial-gradient(circle, var(--neon-pink), transparent)';
         });
         el.addEventListener('mouseleave', () => {
-            cursor.style.transform = 'scale(1)';
-            cursor.style.background = 'var(--neon-cyan)';
+            cursor.classList.remove('cursor-hover');
+            cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+            cursor.style.borderColor = 'var(--neon-cyan)';
+            cursor.style.boxShadow = 
+                '0 0 10px var(--neon-cyan), ' +
+                '0 0 20px var(--neon-cyan), ' +
+                '0 0 30px var(--neon-cyan), ' +
+                'inset 0 0 10px var(--neon-cyan)';
+            cursor.style.background = 'radial-gradient(circle, var(--neon-cyan), transparent)';
         });
     });
 }
