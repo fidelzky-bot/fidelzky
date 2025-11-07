@@ -133,7 +133,7 @@
     {
       "title": "FotoBrain",
       "description": "A modern photography and image processing platform built with WordPress, featuring advanced image management, gallery systems, and user-friendly interfaces for photographers and visual content creators.",
-      "image": "https://via.placeholder.com/600x400/00ffff/000000?text=FotoBrain",
+      "image": "images/fotobrain.jpg",
       "tech": ["WordPress", "PHP", "JavaScript", "CSS"],
       "demo": "https://fotobrain.com/",
       "github": ""
@@ -141,7 +141,7 @@
     {
       "title": "ChatLLM - FetchLawyer",
       "description": "An AI-powered legal chatbot platform built with Large Language Model technology, providing intelligent legal assistance and consultation services through conversational interfaces for legal professionals and clients.",
-      "image": "https://via.placeholder.com/600x400/b026ff/ffffff?text=ChatLLM",
+      "image": "images/chatllm.jpg",
       "tech": ["WordPress", "AI/LLM", "JavaScript", "API Integration"],
       "demo": "https://chatllm.fetchlawyer.com/",
       "github": ""
@@ -149,7 +149,7 @@
     {
       "title": "Lawyerix",
       "description": "A comprehensive legal services platform and lawyer directory built on WordPress, connecting clients with legal professionals through an intuitive interface with search, booking, and consultation features.",
-      "image": "https://via.placeholder.com/600x400/00ff41/000000?text=Lawyerix",
+      "image": "images/lawyerix.jpg",
       "tech": ["WordPress", "PHP", "JavaScript", "MySQL"],
       "demo": "https://lawyerix.com/",
       "github": ""
