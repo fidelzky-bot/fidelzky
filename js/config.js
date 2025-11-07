@@ -187,10 +187,9 @@ function renderTestimonials(testimonials) {
         <div class="testimonial-card">
             <p class="testimonial-text">${testimonial.text || ''}</p>
             <div class="testimonial-author">
-                ${testimonial.avatar ? `<img src="${testimonial.avatar}" alt="${testimonial.name}" class="testimonial-avatar">` : ''}
                 <div class="testimonial-info">
                     <div class="testimonial-name">${testimonial.name || ''}</div>
-                    <div class="testimonial-role">${testimonial.role || ''}${testimonial.company ? ` at ${testimonial.company}` : ''}</div>
+                    <div class="testimonial-company">${testimonial.company || ''}</div>
                 </div>
             </div>
         </div>
