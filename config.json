@@ -185,6 +185,48 @@
       "text": "Fidel is an outstanding WordPress Developer who truly understands both the technical and creative sides of web development. From the very beginning, he demonstrated professionalism, clear communication, and a strong commitment to quality. Fidel not only built a clean, functional, and visually appealing website but also optimized it for speed, security, and usability. What really stands out about Fidel is his problem-solving ability and attention to detail. He always takes the time to understand project goals and offers thoughtful solutions that go beyond expectations. Working with him has been smooth, efficient, and enjoyable from start to finish. I highly recommend Fidel to anyone looking for a reliable, skilled, and dedicated WordPress expert."
     }
   ],
+  "faq": [
+    {
+      "question": "What is vibe coding?",
+      "answer": "Vibe coding, a term coined by Andrej Karpathy, refers to an AI-first approach to software development where programmers interact with AI tools instead of manually writing most of the code. It relies on prompting AI agents, AI-assisted debugging, and rapid iteration with minimal concern for deep technical details."
+    },
+    {
+      "question": "How does vibe coding differ from traditional coding?",
+      "answer": "Vibe coding focuses on prompting AI agents and accepting AI-generated solutions, while traditional coding involves manually writing and structuring code, deeply understanding system logic, and carefully architecting software for scalability and maintainability."
+    },
+    {
+      "question": "Is vibe coding faster than traditional coding?",
+      "answer": "Yes, vibe coding dramatically accelerates development. Applications can be built in hours or days instead of weeks. Y Combinator's 2025 startup batch reported that 25% of founders built 95% of their codebases using AI-generated code. However, traditional coding is slower but more precise and maintainable."
+    },
+    {
+      "question": "What are the main advantages of vibe coding?",
+      "answer": "Vibe coding offers unmatched speed, rapid prototyping, and low barrier to entry. You don't need a formal computer science background, and AI tools handle syntax, logic, and debugging. Replit CEO Amjad Masad stated that 75% of Replit users never write a single line of code—they simply describe what they want."
+    },
+    {
+      "question": "What are the disadvantages of vibe coding?",
+      "answer": "AI-generated code can be messy and hard to maintain, debugging can be more challenging, and AI doesn't always understand business logic, leading to potential security flaws. A study by IBM found AI-generated software has twice as many security flaws compared to human-written code."
+    },
+    {
+      "question": "Will vibe coding replace traditional developers?",
+      "answer": "Not completely. The future is hybrid: vibe coding will dominate early-stage development and prototyping, while traditional coding remains essential for critical applications, infrastructure, cybersecurity, and large-scale systems. Developers will act more as AI copilots, guiding AI tools while maintaining human oversight."
+    },
+    {
+      "question": "Who should use vibe coding?",
+      "answer": "Vibe coding is best for prototyping, fast iteration, startups, and those who want to build and ship apps quickly. It's ideal for MVPs and rapid development cycles where speed is prioritized over long-term maintainability."
+    },
+    {
+      "question": "When should I use traditional coding instead?",
+      "answer": "Use traditional coding for enterprise software, mission-critical applications, security-sensitive systems, and projects requiring long-term maintainability, scalability, and stability. Fortune 500 companies still hesitate to use AI-generated code for financial, healthcare, or security applications."
+    },
+    {
+      "question": "Is vibe coding secure?",
+      "answer": "Vibe coding has security risks. AI-generated code is not always optimized for security, AI can hallucinate and introduce vulnerabilities, and LLMs aren't yet advanced enough to fully understand secure coding principles. Traditional coding remains the safer choice for security-critical systems."
+    },
+    {
+      "question": "Can beginners learn vibe coding?",
+      "answer": "Yes! Vibe coding has a much lower barrier to entry. You don't need a formal computer science background, and AI tools handle syntax, logic, and debugging. This makes programming more accessible to non-technical users compared to traditional coding, which requires months or years of study."
+    }
+  ],
   "contact": {
     "email": "hello.soarmediadigital@gmail.com",
     "phone": "+63948 544 2895",

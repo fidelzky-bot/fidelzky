@@ -1126,6 +1126,85 @@ body {
    Footer
    ============================================ */
 
+/* ============================================
+   FAQ Section
+   ============================================ */
+
+.faq {
+    padding: var(--spacing-xl) 0;
+    position: relative;
+    background: var(--bg-primary);
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: var(--bg-glass);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-sm);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(10px);
+}
+
+.faq-item:hover {
+    border-color: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+}
+
+.faq-question {
+    padding: var(--spacing-md);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: color var(--transition-fast);
+    user-select: none;
+}
+
+.faq-question:hover {
+    color: var(--neon-cyan);
+}
+
+.faq-question.active {
+    color: var(--neon-cyan);
+}
+
+.faq-icon {
+    font-size: 1.2rem;
+    color: var(--neon-cyan);
+    transition: transform var(--transition-normal);
+    flex-shrink: 0;
+    margin-left: var(--spacing-sm);
+}
+
+.faq-question.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-normal), padding var(--transition-normal);
+    padding: 0 var(--spacing-md);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-family: var(--font-sans);
+}
+
+.faq-answer.active {
+    max-height: 500px;
+    padding: 0 var(--spacing-md) var(--spacing-md);
+}
+
 .footer {
     padding: var(--spacing-md) 0;
     background: var(--bg-secondary);

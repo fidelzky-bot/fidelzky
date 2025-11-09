@@ -102,6 +102,11 @@ function applyConfig() {
         renderTestimonials(portfolioConfig.testimonials);
     }
 
+    // Apply FAQ
+    if (portfolioConfig.faq && Array.isArray(portfolioConfig.faq)) {
+        renderFAQ(portfolioConfig.faq);
+    }
+
     // Apply contact info
     const contact = portfolioConfig.contact || {};
     if (contact.email) {
@@ -268,6 +273,58 @@ function toggleTestimonial(index) {
         button.textContent = 'Read less';
         button.classList.add('expanded');
     }
+}
+
+function renderFAQ(faqItems) {
+    const faqContainer = document.getElementById('faqContainer');
+    if (!faqContainer) return;
+
+    faqContainer.innerHTML = faqItems.map((item, index) => {
+        const faqId = `faq-${index}`;
+        return `
+        <div class="faq-item">
+            <div class="faq-question" data-faq-id="${faqId}">
+                <span>${item.question || ''}</span>
+                <i class="fas fa-chevron-down faq-icon"></i>
+            </div>
+            <div class="faq-answer" id="${faqId}">
+                ${item.answer || ''}
+            </div>
+        </div>
+    `;
+    }).join('');
+
+    // Add event listeners to all FAQ questions
+    const faqQuestions = faqContainer.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const faqId = this.getAttribute('data-faq-id');
+            const answer = document.getElementById(faqId);
+            if (!answer) return;
+
+            const isActive = this.classList.contains('active');
+            
+            // Close all other FAQ items
+            faqQuestions.forEach(q => {
+                if (q !== this) {
+                    q.classList.remove('active');
+                    const otherAnswer = document.getElementById(q.getAttribute('data-faq-id'));
+                    if (otherAnswer) {
+                        otherAnswer.classList.remove('active');
+                    }
+                }
+            });
+
+            // Toggle current FAQ item
+            if (isActive) {
+                this.classList.remove('active');
+                answer.classList.remove('active');
+            } else {
+                this.classList.add('active');
+                answer.classList.add('active');
+            }
+        });
+    });
 }
 
 function renderSocialLinks(socialLinks) {
