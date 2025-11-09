@@ -118,9 +118,9 @@
       ]
     },
     {
-      "title": "Vibe Coding: AI-Assisted Development with CursorAI & Replit",
+      "title": "Vibe Coding: AI-Assisted Development",
       "icon": "🤖",
-      "description": "AI-assisted software development (vibe coding) where goals are described in natural language and AI generates the code. Leveraging CursorAI and Replit to accelerate development and deliver innovative solutions.",
+      "description": "AI-assisted software development (vibe coding) where goals are described in natural language and AI generates the code. Accelerating development and delivering innovative solutions with intelligent code assistance.",
       "features": [
         "Natural language to code generation",
         "CursorAI integration & workflow setup",
