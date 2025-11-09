@@ -128,7 +128,7 @@ function generateCodeBackground(elementId, snippetCount = 15) {
         'const developer = {',
         '  name: "WordPress Dev",',
         '  skills: ["PHP", "JS", "CSS"],',
-        '  vibe: true',
+        '  vibeCoding: true, // AI-assisted development',
         '};',
         '',
         '<?php',

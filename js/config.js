@@ -22,7 +22,7 @@ function getDefaultConfig() {
         personal: {
             name: "Your Name",
             title: "WordPress Developer & Vibe Coder",
-            bio: "Passionate WordPress developer crafting digital experiences with code and creativity.",
+            bio: "Passionate WordPress developer specializing in AI-assisted software development (vibe coding).",
             avatar: "https://via.placeholder.com/300"
         },
         skills: [],

@@ -3,7 +3,7 @@
     "name": "Fidelzky",
     "fullName": "Fidel Centeno",
     "title": "WordPress Developer & Vibe Coder",
-    "bio": "Passionate WordPress developer crafting digital experiences with clean code and creative solutions. Specializing in custom themes, plugin development, and performance optimization. Always coding with good vibes!",
+    "bio": "Passionate WordPress developer specializing in AI-assisted software development (vibe coding). Using natural language to describe goals and leveraging AI tools like CursorAI and Replit to generate clean, efficient code. Crafting digital experiences with custom themes, plugin development, and performance optimization.",
     "avatar": "./Fidel Profile.png"
   },
   "skills": [
@@ -58,12 +58,12 @@
   ],
   "services": [
     {
-      "title": "Custom WordPress Theme & Vibe-Driven UI/UX Design",
+      "title": "Custom WordPress Theme & AI-Enhanced UI/UX Design",
       "icon": "🎨",
-      "description": "Crafting unique WordPress themes with vibe-driven UI/UX that perfectly captures your brand's essence and creates memorable user experiences.",
+      "description": "Crafting unique WordPress themes with AI-assisted design workflows that perfectly capture your brand's essence and create memorable user experiences.",
       "features": [
         "Custom theme development from scratch",
-        "Vibe-driven design philosophy",
+        "AI-assisted design iteration",
         "User experience optimization",
         "Responsive & mobile-first design",
         "Brand identity integration"
@@ -94,39 +94,39 @@
       ]
     },
     {
-      "title": "Performance, Speed & Vibe Optimization",
+      "title": "Performance, Speed & AI-Optimized Solutions",
       "icon": "⚡",
-      "description": "Optimizing your WordPress site for blazing-fast performance while maintaining the perfect vibe and user experience.",
+      "description": "Optimizing your WordPress site for blazing-fast performance using AI-assisted analysis and optimization techniques.",
       "features": [
         "Speed optimization",
         "Performance tuning",
-        "Caching strategies",
+        "AI-powered caching strategies",
         "Image optimization",
         "Database optimization"
       ]
     },
     {
-      "title": "AI Assisted Codes using CursorAI or Replit",
+      "title": "Vibe Coding: AI-Assisted Development with CursorAI & Replit",
       "icon": "🤖",
-      "description": "Leveraging cutting-edge AI tools like CursorAI and Replit to accelerate development, enhance code quality, and deliver innovative solutions with intelligent code assistance.",
+      "description": "AI-assisted software development (vibe coding) where goals are described in natural language and AI generates the code. Leveraging CursorAI and Replit to accelerate development and deliver innovative solutions.",
       "features": [
-        "AI-powered code generation & optimization",
+        "Natural language to code generation",
         "CursorAI integration & workflow setup",
         "Replit AI-assisted development",
-        "Code review & intelligent suggestions",
-        "Rapid prototyping with AI assistance"
+        "AI-powered code review & suggestions",
+        "Rapid prototyping with vibe coding"
       ]
     },
     {
-      "title": "Migration, Upgrades & Site Relaunch with Brand Vibe Refresh",
+      "title": "AI-Assisted SaaS Tools & Platform Development",
       "icon": "🚀",
-      "description": "Seamlessly migrating, upgrading, and relaunching your WordPress site with a complete brand vibe refresh for a fresh start.",
+      "description": "Building scalable SaaS platforms and tools powered by AI assistance, leveraging vibe coding principles to rapidly develop and deploy innovative software-as-a-service solutions.",
       "features": [
-        "Site migration & upgrades",
-        "Brand vibe refresh",
-        "Data migration & backup",
-        "Zero-downtime deployment",
-        "Post-launch support"
+        "AI-assisted SaaS architecture & development",
+        "Rapid prototyping with natural language workflows",
+        "Scalable cloud infrastructure setup",
+        "API integration & third-party service connections",
+        "Automated testing & deployment pipelines"
       ]
     }
   ],
