@@ -446,37 +446,86 @@ body {
     font-family: var(--font-mono);
     font-size: 0.9rem;
     text-decoration: none;
-    border: 2px solid;
-    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 8px;
     transition: var(--transition-normal);
     cursor: pointer;
     display: inline-block;
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    transition: var(--transition-slow);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: var(--transition-slow);
+    pointer-events: none;
+}
+
+.btn:hover::after {
+    opacity: 1;
 }
 
 .btn-primary {
-    background: transparent;
-    border-color: var(--neon-cyan);
+    background: var(--bg-glass);
+    border-color: rgba(0, 255, 255, 0.2);
     color: var(--neon-cyan);
 }
 
+.btn-primary,
+.btn-secondary {
+    position: relative;
+    z-index: 1;
+}
+
 .btn-primary:hover {
-    background: var(--neon-cyan);
-    color: var(--bg-primary);
-    box-shadow: var(--glow-cyan);
-    transform: translateY(-2px);
+    border-color: var(--neon-cyan);
+    box-shadow: var(--glow-cyan), 0 0 40px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.2);
+    transform: translateY(-5px);
 }
 
 .btn-secondary {
-    background: transparent;
-    border-color: var(--neon-purple);
+    background: var(--bg-glass);
+    border-color: rgba(176, 38, 255, 0.2);
     color: var(--neon-purple);
 }
 
+.btn-secondary::before {
+    background: linear-gradient(90deg, transparent, rgba(176, 38, 255, 0.1), transparent);
+}
+
+.btn-secondary::after {
+    background: radial-gradient(circle, rgba(176, 38, 255, 0.1) 0%, transparent 70%);
+}
+
 .btn-secondary:hover {
-    background: var(--neon-purple);
-    color: var(--bg-primary);
-    box-shadow: var(--glow-purple);
-    transform: translateY(-2px);
+    border-color: var(--neon-purple);
+    box-shadow: var(--glow-purple), 0 0 40px rgba(176, 38, 255, 0.4), 0 0 60px rgba(176, 38, 255, 0.2);
+    transform: translateY(-5px);
 }
 
 .hero-image {
@@ -1041,23 +1090,61 @@ body {
     align-items: center;
     justify-content: center;
     background: var(--bg-glass);
+    backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 255, 255, 0.2);
     border-radius: 8px;
     color: var(--neon-cyan);
     text-decoration: none;
     transition: var(--transition-normal);
     font-size: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    transition: var(--transition-slow);
+}
+
+.social-link:hover::before {
+    left: 100%;
+}
+
+.social-link::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: var(--transition-slow);
+    pointer-events: none;
+}
+
+.social-link:hover::after {
+    opacity: 1;
 }
 
 .social-link i {
     font-size: 1.5rem;
     line-height: 1;
+    position: relative;
+    z-index: 1;
 }
 
 .social-link:hover {
     border-color: var(--neon-cyan);
-    box-shadow: var(--glow-cyan);
-    transform: translateY(-3px);
+    box-shadow: var(--glow-cyan), 0 0 40px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.2);
+    transform: translateY(-5px);
 }
 
 .contact-form {
@@ -1368,8 +1455,9 @@ body {
     right: 2rem;
     width: 50px;
     height: 50px;
-    background: var(--bg-tertiary);
-    border: 2px solid var(--neon-cyan);
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.2);
     border-radius: 50%;
     color: var(--neon-cyan);
     font-size: 1.2rem;
@@ -1382,11 +1470,42 @@ body {
     transform: translateY(20px);
     transition: all var(--transition-normal);
     z-index: 1000;
-    box-shadow: 
-        0 0 10px rgba(0, 255, 255, 0.3),
-        0 0 20px rgba(0, 255, 255, 0.2),
-        inset 0 0 10px rgba(0, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.back-to-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    transition: var(--transition-slow);
+    border-radius: 50%;
+}
+
+.back-to-top:hover::before {
+    left: 100%;
+}
+
+.back-to-top::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: var(--transition-slow);
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+.back-to-top:hover::after {
+    opacity: 1;
 }
 
 .back-to-top.show {
@@ -1396,23 +1515,19 @@ body {
 }
 
 .back-to-top:hover {
-    background: var(--neon-cyan);
-    color: var(--bg-primary);
     border-color: var(--neon-cyan);
-    box-shadow: 
-        0 0 20px var(--neon-cyan),
-        0 0 40px var(--neon-cyan),
-        0 0 60px var(--neon-cyan),
-        inset 0 0 20px rgba(0, 255, 255, 0.3);
-    transform: translateY(-5px) scale(1.1);
+    box-shadow: var(--glow-cyan), 0 0 40px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.2);
+    transform: translateY(-5px);
 }
 
 .back-to-top:active {
-    transform: translateY(-3px) scale(1.05);
+    transform: translateY(-3px);
 }
 
 .back-to-top i {
     transition: transform var(--transition-fast);
+    position: relative;
+    z-index: 1;
 }
 
 .back-to-top:hover i {
