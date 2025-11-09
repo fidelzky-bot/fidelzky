@@ -123,7 +123,7 @@
       "description": "AI-assisted software development (vibe coding) where goals are described in natural language and AI generates the code. Accelerating development and delivering innovative solutions with intelligent code assistance.",
       "features": [
         "Natural language to code generation",
-        "CursorAI integration & workflow setup",
+        "Cursor integration & workflow setup",
         "Replit AI-assisted development",
         "AI-powered code review & suggestions",
         "Rapid prototyping with vibe coding"
@@ -208,7 +208,7 @@
     },
     {
       "question": "How can vibe coding be used with WordPress development?",
-      "answer": "Vibe coding revolutionizes WordPress development by allowing developers to describe custom themes, plugins, and features in natural language. AI tools like CursorAI and Replit can generate PHP, JavaScript, and CSS code for WordPress projects, dramatically speeding up custom theme development, plugin creation, and site customization."
+      "answer": "Vibe coding revolutionizes WordPress development by allowing developers to describe custom themes, plugins, and features in natural language. AI tools like Cursor and Replit can generate PHP, JavaScript, and CSS code for WordPress projects, dramatically speeding up custom theme development, plugin creation, and site customization."
     },
     {
       "question": "What are the benefits of using AI-assisted development for WordPress projects?",
@@ -223,8 +223,8 @@
       "answer": "Vibe coding accelerates WordPress development by generating boilerplate code instantly, creating custom functions and hooks on demand, suggesting WordPress best practices automatically, and helping debug PHP and JavaScript errors quickly. What traditionally takes days or weeks can be accomplished in hours, allowing for faster client delivery and more time for creative problem-solving."
     },
     {
-      "question": "Is it possible to use CursorAI or Replit for WordPress projects?",
-      "answer": "Absolutely! CursorAI and Replit are excellent for WordPress development. CursorAI provides intelligent code completion and generation directly in your editor, perfect for writing WordPress themes and plugins. Replit offers cloud-based development environments where you can describe WordPress features and get AI-generated code, making it easy to prototype and test WordPress solutions quickly."
+      "question": "Is it possible to use Cursor or Replit for WordPress projects?",
+      "answer": "Absolutely! Cursor and Replit are excellent for WordPress development. Cursor provides intelligent code completion and generation directly in your editor, perfect for writing WordPress themes and plugins. Replit offers cloud-based development environments where you can describe WordPress features and get AI-generated code, making it easy to prototype and test WordPress solutions quickly."
     }
   ],
   "contact": {
