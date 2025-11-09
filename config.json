@@ -106,15 +106,15 @@
       ]
     },
     {
-      "title": "Content Strategy, SEO & Visual Storytelling",
-      "icon": "📝",
-      "description": "Developing content strategies that combine SEO excellence with visual storytelling to engage audiences and drive results.",
+      "title": "AI Assisted Codes using CursorAI or Replit",
+      "icon": "🤖",
+      "description": "Leveraging cutting-edge AI tools like CursorAI and Replit to accelerate development, enhance code quality, and deliver innovative solutions with intelligent code assistance.",
       "features": [
-        "SEO optimization",
-        "Content strategy development",
-        "Visual storytelling",
-        "Keyword research & implementation",
-        "Content creation guidance"
+        "AI-powered code generation & optimization",
+        "CursorAI integration & workflow setup",
+        "Replit AI-assisted development",
+        "Code review & intelligent suggestions",
+        "Rapid prototyping with AI assistance"
       ]
     },
     {
