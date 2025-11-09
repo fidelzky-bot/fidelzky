@@ -576,6 +576,11 @@ body {
     box-shadow: var(--glow-cyan);
     position: relative;
     z-index: 2;
+    transition: var(--transition-normal);
+}
+
+.avatar-container:hover .avatar {
+    animation: pulseAvatar 2s ease-in-out infinite;
 }
 
 .avatar-glow {
@@ -1396,6 +1401,17 @@ body {
     50% {
         box-shadow: var(--glow-cyan), 0 0 60px rgba(0, 255, 255, 0.6), 0 0 80px rgba(0, 255, 255, 0.4), 0 0 100px rgba(0, 255, 255, 0.2);
         transform: scale(1.05);
+    }
+}
+
+@keyframes pulseAvatar {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: var(--glow-cyan);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: var(--glow-cyan), 0 0 30px rgba(0, 255, 255, 0.6), 0 0 50px rgba(0, 255, 255, 0.4);
     }
 }
 
