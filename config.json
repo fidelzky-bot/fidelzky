@@ -196,15 +196,11 @@
     },
     {
       "question": "Is vibe coding faster than traditional coding?",
-      "answer": "Yes, vibe coding dramatically accelerates development. Applications can be built in hours or days instead of weeks. Y Combinator's 2025 startup batch reported that 25% of founders built 95% of their codebases using AI-generated code. However, traditional coding is slower but more precise and maintainable."
+      "answer": "Yes, vibe coding dramatically accelerates development. Applications can be built in hours or days instead of weeks. Y Combinator's 2025 startup batch reported that 25% of founders built 95% of their codebases using AI-generated code."
     },
     {
       "question": "What are the main advantages of vibe coding?",
       "answer": "Vibe coding offers unmatched speed, rapid prototyping, and low barrier to entry. You don't need a formal computer science background, and AI tools handle syntax, logic, and debugging. Replit CEO Amjad Masad stated that 75% of Replit users never write a single line of code—they simply describe what they want."
-    },
-    {
-      "question": "What are the disadvantages of vibe coding?",
-      "answer": "AI-generated code can be messy and hard to maintain, debugging can be more challenging, and AI doesn't always understand business logic, leading to potential security flaws. A study by IBM found AI-generated software has twice as many security flaws compared to human-written code."
     },
     {
       "question": "Will vibe coding replace traditional developers?",
@@ -213,14 +209,6 @@
     {
       "question": "Who should use vibe coding?",
       "answer": "Vibe coding is best for prototyping, fast iteration, startups, and those who want to build and ship apps quickly. It's ideal for MVPs and rapid development cycles where speed is prioritized over long-term maintainability."
-    },
-    {
-      "question": "When should I use traditional coding instead?",
-      "answer": "Use traditional coding for enterprise software, mission-critical applications, security-sensitive systems, and projects requiring long-term maintainability, scalability, and stability. Fortune 500 companies still hesitate to use AI-generated code for financial, healthcare, or security applications."
-    },
-    {
-      "question": "Is vibe coding secure?",
-      "answer": "Vibe coding has security risks. AI-generated code is not always optimized for security, AI can hallucinate and introduce vulnerabilities, and LLMs aren't yet advanced enough to fully understand secure coding principles. Traditional coding remains the safer choice for security-critical systems."
     },
     {
       "question": "Can beginners learn vibe coding?",
