@@ -504,8 +504,6 @@ body {
 
 .btn-primary:hover {
     border-color: var(--neon-cyan);
-    box-shadow: var(--glow-cyan), 0 0 40px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.2);
-    transform: translateY(-5px);
     animation: pulseGlowCyan 2s ease-in-out infinite;
 }
 
@@ -525,8 +523,6 @@ body {
 
 .btn-secondary:hover {
     border-color: var(--neon-purple);
-    box-shadow: var(--glow-purple), 0 0 40px rgba(176, 38, 255, 0.4), 0 0 60px rgba(176, 38, 255, 0.2);
-    transform: translateY(-5px);
     animation: pulseGlowPurple 2s ease-in-out infinite;
 }
 
@@ -1145,8 +1141,6 @@ body {
 
 .social-link:hover {
     border-color: var(--neon-cyan);
-    box-shadow: var(--glow-cyan), 0 0 40px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.2);
-    transform: translateY(-5px);
     animation: pulseGlowCyan 2s ease-in-out infinite;
 }
 
@@ -1347,18 +1341,22 @@ body {
 @keyframes pulseGlowCyan {
     0%, 100% {
         box-shadow: var(--glow-cyan), 0 0 40px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.2);
+        transform: translateY(-5px) scale(1);
     }
     50% {
         box-shadow: var(--glow-cyan), 0 0 60px rgba(0, 255, 255, 0.6), 0 0 80px rgba(0, 255, 255, 0.4), 0 0 100px rgba(0, 255, 255, 0.2);
+        transform: translateY(-5px) scale(1.05);
     }
 }
 
 @keyframes pulseGlowPurple {
     0%, 100% {
         box-shadow: var(--glow-purple), 0 0 40px rgba(176, 38, 255, 0.4), 0 0 60px rgba(176, 38, 255, 0.2);
+        transform: translateY(-5px) scale(1);
     }
     50% {
         box-shadow: var(--glow-purple), 0 0 60px rgba(176, 38, 255, 0.6), 0 0 80px rgba(176, 38, 255, 0.4), 0 0 100px rgba(176, 38, 255, 0.2);
+        transform: translateY(-5px) scale(1.05);
     }
 }
 
@@ -1537,8 +1535,6 @@ body {
 
 .back-to-top:hover {
     border-color: var(--neon-cyan);
-    box-shadow: var(--glow-cyan), 0 0 40px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.2);
-    transform: translateY(-5px);
     animation: pulseGlowCyan 2s ease-in-out infinite;
 }
 
