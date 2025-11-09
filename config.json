@@ -205,14 +205,6 @@
     {
       "question": "Will vibe coding replace traditional developers?",
       "answer": "Not completely. The future is hybrid: vibe coding will dominate early-stage development and prototyping, while traditional coding remains essential for critical applications, infrastructure, cybersecurity, and large-scale systems. Developers will act more as AI copilots, guiding AI tools while maintaining human oversight."
-    },
-    {
-      "question": "Who should use vibe coding?",
-      "answer": "Vibe coding is best for prototyping, fast iteration, startups, and those who want to build and ship apps quickly. It's ideal for MVPs and rapid development cycles where speed is prioritized over long-term maintainability."
-    },
-    {
-      "question": "Can beginners learn vibe coding?",
-      "answer": "Yes! Vibe coding has a much lower barrier to entry. You don't need a formal computer science background, and AI tools handle syntax, logic, and debugging. This makes programming more accessible to non-technical users compared to traditional coding, which requires months or years of study."
     }
   ],
   "contact": {
