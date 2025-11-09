@@ -54,6 +54,18 @@
     {
       "name": "Docker",
       "level": 65
+    },
+    {
+      "name": "Cursor",
+      "level": 85
+    },
+    {
+      "name": "Replit",
+      "level": 80
+    },
+    {
+      "name": "GitHub Copilot",
+      "level": 85
     }
   ],
   "services": [
