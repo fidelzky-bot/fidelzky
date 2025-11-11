@@ -98,10 +98,11 @@ function applyConfig() {
         renderProjects(portfolioConfig.projects);
     }
 
-    // Apply timeline
-    if (portfolioConfig.timeline && Array.isArray(portfolioConfig.timeline)) {
-        renderTimeline(portfolioConfig.timeline);
-    }
+    // Apply timeline (always render, even if empty - will show default)
+    const timelineEvents = portfolioConfig.timeline && Array.isArray(portfolioConfig.timeline) 
+        ? portfolioConfig.timeline 
+        : [];
+    renderTimeline(timelineEvents);
 
     // Apply testimonials
     if (portfolioConfig.testimonials && Array.isArray(portfolioConfig.testimonials)) {
@@ -217,6 +218,23 @@ function renderProjects(projects) {
 function renderTimeline(events) {
     const timelineContainer = document.getElementById('timelineContainer');
     if (!timelineContainer) return;
+
+    // If no events provided, show default example
+    if (!events || events.length === 0) {
+        events = [
+            {
+                year: "2024",
+                title: "Web Developer",
+                subtitle: "Your Company Name",
+                dateRange: "Feb 2024 - Present",
+                description: "Add your career timeline events in config.json",
+                bullets: [
+                    "Update config.json with your timeline data",
+                    "Each event should have: year, title, subtitle, dateRange, and bullets"
+                ]
+            }
+        ];
+    }
 
     // Create timeline line and progress elements
     const timelineLine = document.createElement('div');
