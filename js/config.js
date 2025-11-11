@@ -297,7 +297,11 @@ function renderTimeline(events) {
         if (bullets.length > 0) {
             descriptionHTML += '<ul class="timeline-event-description">';
             bullets.forEach(bullet => {
-                descriptionHTML += `<li>${bullet}</li>`;
+                // Add period if not already present
+                const bulletText = bullet.trim();
+                const hasPeriod = bulletText.endsWith('.') || bulletText.endsWith('!') || bulletText.endsWith('?');
+                const finalBullet = hasPeriod ? bulletText : bulletText + '.';
+                descriptionHTML += `<li>${finalBullet}</li>`;
             });
             descriptionHTML += '</ul>';
         }
