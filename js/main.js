@@ -445,28 +445,28 @@ function getRandomCountry() {
 
 const socialProofMessages = [
     // Contact/Message Activity
-    { icon: '💬', text: 'Someone just sent a message through the contact form.' },
-    { icon: '✉️', text: 'A visitor just reached out about a new project!' },
-    { icon: '💼', text: 'New inquiry received — someone\'s interested in web development services.' },
+    { icon: '💬', text: () => `Someone from ${getRandomCountry()} just sent a message through the contact form.` },
+    { icon: '✉️', text: () => `A visitor from ${getRandomCountry()} just reached out about a new project!` },
+    { icon: '💼', text: () => `New inquiry from ${getRandomCountry()} — someone's interested in web development services.` },
     { icon: '👋', text: () => `Visitor from ${getRandomCountry()} just sent a message.` },
-    { icon: '📬', text: 'A potential client just dropped a message!' },
+    { icon: '📬', text: () => `A potential client from ${getRandomCountry()} just dropped a message!` },
     { icon: '🌎', text: () => `Visitor from ${getRandomCountry()} just viewed this portfolio.` },
-    { icon: '👁️', text: 'Someone is checking the "About Me" page right now.' },
-    { icon: '💻', text: 'Visitor exploring the "Recent Projects" showcase.' },
-    { icon: '👀', text: 'Someone is viewing the "WordPress Projects" section.' },
-    { icon: '🧠', text: 'A visitor is checking the skills and expertise section.' },
+    { icon: '👁️', text: () => `Someone from ${getRandomCountry()} is checking the "About Me" page right now.` },
+    { icon: '💻', text: () => `Visitor from ${getRandomCountry()} exploring the "Recent Projects" showcase.` },
+    { icon: '👀', text: () => `Someone from ${getRandomCountry()} is viewing the "WordPress Projects" section.` },
+    { icon: '🧠', text: () => `A visitor from ${getRandomCountry()} is checking the skills and expertise section.` },
     // Engagement/Interaction
-    { icon: '⭐', text: 'Someone just bookmarked this portfolio link.' },
-    { icon: '🖱️', text: 'A visitor just clicked "Get In Touch".' },
-    { icon: '🔗', text: 'Someone just checked the GitHub profile.' },
-    { icon: '🕹️', text: 'Visitor explored the interactive timeline.' },
-    { icon: '📱', text: 'Someone is viewing this portfolio on mobile.' },
+    { icon: '⭐', text: () => `Someone from ${getRandomCountry()} just bookmarked this portfolio link.` },
+    { icon: '🖱️', text: () => `A visitor from ${getRandomCountry()} just clicked "Get In Touch".` },
+    { icon: '🔗', text: () => `Someone from ${getRandomCountry()} just checked the GitHub profile.` },
+    { icon: '🕹️', text: () => `Visitor from ${getRandomCountry()} explored the interactive timeline.` },
+    { icon: '📱', text: () => `Someone from ${getRandomCountry()} is viewing this portfolio on mobile.` },
     // Testimonials/Reviews
-    { icon: '🗣️', text: 'A past client just left a testimonial.' },
-    { icon: '💬', text: 'Someone rated the last project 5 stars!' },
-    { icon: '👍', text: 'Visitor is reading the client testimonials.' },
-    { icon: '🎯', text: 'Someone is interested in the services section.' },
-    { icon: '🚀', text: 'New visitor exploring the career timeline.' }
+    { icon: '🗣️', text: () => `A past client from ${getRandomCountry()} just left a testimonial.` },
+    { icon: '💬', text: () => `Someone from ${getRandomCountry()} rated the last project 5 stars!` },
+    { icon: '👍', text: () => `Visitor from ${getRandomCountry()} is reading the client testimonials.` },
+    { icon: '🎯', text: () => `Someone from ${getRandomCountry()} is interested in the services section.` },
+    { icon: '🚀', text: () => `New visitor from ${getRandomCountry()} exploring the career timeline.` }
 ];
 
 let notificationQueue = [];
@@ -567,9 +567,9 @@ function initSocialProofNotifications() {
         contactForm.addEventListener('submit', () => {
             setTimeout(() => {
                 const contactMessages = [
-                    { icon: '💬', text: 'Someone just sent a message through the contact form.' },
-                    { icon: '✉️', text: 'A visitor just reached out about a new project!' },
-                    { icon: '📬', text: 'A potential client just dropped a message!' }
+                    { icon: '💬', text: () => `Someone from ${getRandomCountry()} just sent a message through the contact form.` },
+                    { icon: '✉️', text: () => `A visitor from ${getRandomCountry()} just reached out about a new project!` },
+                    { icon: '📬', text: () => `A potential client from ${getRandomCountry()} just dropped a message!` }
                 ];
                 notificationQueue.push(contactMessages[Math.floor(Math.random() * contactMessages.length)]);
                 if (!isShowingNotification) {
@@ -588,13 +588,13 @@ function initSocialProofNotifications() {
                 let message = null;
                 
                 if (sectionId === 'projects') {
-                    message = { icon: '👀', text: 'Someone is viewing the "WordPress Projects" section.' };
+                    message = { icon: '👀', text: () => `Someone from ${getRandomCountry()} is viewing the "WordPress Projects" section.` };
                 } else if (sectionId === 'about') {
-                    message = { icon: '🧠', text: 'Someone is checking the "About Me" page right now.' };
+                    message = { icon: '🧠', text: () => `Someone from ${getRandomCountry()} is checking the "About Me" page right now.` };
                 } else if (sectionId === 'testimonials') {
-                    message = { icon: '👍', text: 'Visitor is reading the client testimonials.' };
+                    message = { icon: '👍', text: () => `Visitor from ${getRandomCountry()} is reading the client testimonials.` };
                 } else if (sectionId === 'timeline') {
-                    message = { icon: '🚀', text: 'New visitor exploring the career timeline.' };
+                    message = { icon: '🚀', text: () => `New visitor from ${getRandomCountry()} exploring the career timeline.` };
                 }
                 
                 if (message) {
