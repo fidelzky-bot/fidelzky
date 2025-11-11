@@ -428,6 +428,180 @@ function initMovingParticles() {
 setTimeout(initMovingParticles, 1500);
 
 // ============================================
+// Social Proof Notifications
+// ============================================
+
+const socialProofMessages = [
+    // Contact/Message Activity
+    { icon: '💬', text: 'Someone just sent a message through the contact form.' },
+    { icon: '✉️', text: 'A visitor just reached out about a new project!' },
+    { icon: '💼', text: 'New inquiry received — someone\'s interested in your web development services.' },
+    { icon: '👋', text: 'Visitor from Canada just sent a message.' },
+    { icon: '📬', text: 'A potential client just dropped a message!' },
+    { icon: '🌎', text: 'Visitor from Australia just viewed your portfolio.' },
+    { icon: '👁️', text: 'Someone is checking your "About Me" page right now.' },
+    { icon: '💻', text: 'Visitor exploring your "Recent Projects" showcase.' },
+    { icon: '👀', text: 'Someone is viewing your "WordPress Projects" section.' },
+    { icon: '🧠', text: 'A visitor is checking your skills and expertise.' },
+    // Engagement/Interaction
+    { icon: '⭐', text: 'Someone bookmarked your portfolio link.' },
+    { icon: '🖱️', text: 'A visitor just clicked "Get In Touch".' },
+    { icon: '🔗', text: 'Someone just checked your GitHub profile.' },
+    { icon: '🕹️', text: 'Visitor explored your interactive timeline.' },
+    { icon: '📱', text: 'Someone is viewing your portfolio on mobile.' },
+    // Testimonials/Reviews
+    { icon: '🗣️', text: 'A past client just left a testimonial.' },
+    { icon: '💬', text: 'Someone rated your last project 5 stars!' },
+    { icon: '👍', text: 'Visitor is reading your client testimonials.' },
+    { icon: '🎯', text: 'Someone is interested in your services section.' },
+    { icon: '🚀', text: 'New visitor exploring your career timeline.' }
+];
+
+let notificationQueue = [];
+let isShowingNotification = false;
+let notificationInterval = null;
+
+function createNotification(messageObj) {
+    const container = document.getElementById('socialProofContainer');
+    if (!container) return;
+
+    const notification = document.createElement('div');
+    notification.className = 'social-proof-notification';
+    
+    const content = document.createElement('div');
+    content.className = 'social-proof-notification-content';
+    
+    const icon = document.createElement('div');
+    icon.className = 'social-proof-icon';
+    icon.textContent = messageObj.icon;
+    
+    const text = document.createElement('div');
+    text.className = 'social-proof-text';
+    text.textContent = messageObj.text;
+    
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'social-proof-close';
+    closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+    closeBtn.setAttribute('aria-label', 'Close notification');
+    
+    closeBtn.addEventListener('click', () => {
+        notification.style.animation = 'fadeOutNotification 0.5s ease-in forwards';
+        setTimeout(() => {
+            notification.remove();
+            isShowingNotification = false;
+            showNextNotification();
+        }, 500);
+    });
+    
+    content.appendChild(icon);
+    content.appendChild(text);
+    notification.appendChild(content);
+    notification.appendChild(closeBtn);
+    
+    container.appendChild(notification);
+    
+    // Auto-remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.style.animation = 'fadeOutNotification 0.5s ease-in forwards';
+            setTimeout(() => {
+                notification.remove();
+                isShowingNotification = false;
+                showNextNotification();
+            }, 500);
+        }
+    }, 5000);
+}
+
+function showNextNotification() {
+    if (isShowingNotification || notificationQueue.length === 0) return;
+    
+    isShowingNotification = true;
+    const message = notificationQueue.shift();
+    createNotification(message);
+}
+
+function addNotificationToQueue() {
+    const randomMessage = socialProofMessages[Math.floor(Math.random() * socialProofMessages.length)];
+    notificationQueue.push(randomMessage);
+    
+    if (!isShowingNotification) {
+        showNextNotification();
+    }
+}
+
+function initSocialProofNotifications() {
+    // Wait a bit after page load before showing first notification
+    setTimeout(() => {
+        addNotificationToQueue();
+    }, 3000);
+    
+    // Show notifications at random intervals (15-45 seconds)
+    function scheduleNextNotification() {
+        const delay = 15000 + Math.random() * 30000; // 15-45 seconds
+        setTimeout(() => {
+            addNotificationToQueue();
+            scheduleNextNotification();
+        }, delay);
+    }
+    
+    scheduleNextNotification();
+    
+    // Also show notification when user interacts with contact form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', () => {
+            setTimeout(() => {
+                const contactMessages = [
+                    { icon: '💬', text: 'Someone just sent a message through the contact form.' },
+                    { icon: '✉️', text: 'A visitor just reached out about a new project!' },
+                    { icon: '📬', text: 'A potential client just dropped a message!' }
+                ];
+                notificationQueue.push(contactMessages[Math.floor(Math.random() * contactMessages.length)]);
+                if (!isShowingNotification) {
+                    showNextNotification();
+                }
+            }, 2000);
+        });
+    }
+    
+    // Show notification when user scrolls to certain sections
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && Math.random() > 0.7) {
+                const sectionId = entry.target.id;
+                let message = null;
+                
+                if (sectionId === 'projects') {
+                    message = { icon: '👀', text: 'Someone is viewing your "WordPress Projects" section.' };
+                } else if (sectionId === 'about') {
+                    message = { icon: '🧠', text: 'Someone is checking your "About Me" page right now.' };
+                } else if (sectionId === 'testimonials') {
+                    message = { icon: '👍', text: 'Visitor is reading your client testimonials.' };
+                } else if (sectionId === 'timeline') {
+                    message = { icon: '🚀', text: 'New visitor exploring your career timeline.' };
+                }
+                
+                if (message) {
+                    notificationQueue.push(message);
+                    if (!isShowingNotification) {
+                        showNextNotification();
+                    }
+                }
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}
+
+// Initialize social proof notifications after page load
+setTimeout(initSocialProofNotifications, 2000);
+
+// ============================================
 // Active Navigation Link
 // ============================================
 

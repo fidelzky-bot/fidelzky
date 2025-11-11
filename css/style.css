@@ -1871,3 +1871,117 @@ body {
     }
 }
 
+/* ============================================
+   Social Proof Notifications
+   ============================================ */
+
+.social-proof-container {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    pointer-events: none;
+    max-width: 350px;
+}
+
+.social-proof-notification {
+    background: var(--bg-glass);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    animation: slideInNotification 0.5s ease-out, fadeOutNotification 0.5s ease-in 4.5s forwards;
+    pointer-events: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-proof-notification::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--neon-cyan), var(--neon-purple));
+}
+
+.social-proof-notification-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.social-proof-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.social-proof-text {
+    flex: 1;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-family: var(--font-sans);
+}
+
+.social-proof-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: var(--transition-fast);
+    opacity: 0.6;
+}
+
+.social-proof-close:hover {
+    color: var(--neon-cyan);
+    opacity: 1;
+}
+
+@keyframes slideInNotification {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutNotification {
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .social-proof-container {
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        max-width: 100%;
+    }
+
+    .social-proof-notification {
+        padding: 0.75rem;
+    }
+
+    .social-proof-text {
+        font-size: 0.85rem;
+    }
+}
+
