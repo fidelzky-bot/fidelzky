@@ -47,6 +47,14 @@
    Reset & Base Styles
    ============================================ */
 
+/* SVG Filters - Hidden but accessible */
+svg.absolute {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -648,7 +656,7 @@ body {
 .skill-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid #00ffff;
     border-radius: 8px;
     padding: var(--spacing-md);
     transition: var(--transition-normal);
@@ -656,48 +664,35 @@ body {
     overflow: hidden;
     isolation: isolate;
     background-clip: padding-box;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.1),
+        0 0 40px rgba(0, 255, 255, 0.05),
+        inset 0 0 20px rgba(0, 255, 255, 0.05);
 }
 
-/* Electric Border Effect - Diagonal Lines */
-
+/* Electric Border Effect with SVG Filter */
 .skill-card::before {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    padding: 2px;
-    background: linear-gradient(45deg, transparent 30%, #00ffff 50%, transparent 70%);
-    background-size: 200% 200%;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: electricDiagonal 3s linear infinite;
+    border: 2px solid #00ffff;
+    filter: url(#electro-filter-cyan);
     z-index: -1;
+    pointer-events: none;
 }
 
+/* Glow Layer 1 */
 .skill-card::after {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    padding: 2px;
-    background: linear-gradient(-45deg, transparent 30%, #00ffff 50%, transparent 70%);
-    background-size: 200% 200%;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: electricDiagonal 3s linear infinite reverse;
-    z-index: -1;
-    opacity: 0.6;
-}
-
-@keyframes electricDiagonal {
-    0% {
-        background-position: -100% -100%;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
+    border: 2px solid rgba(0, 255, 255, 0.7);
+    filter: blur(2.4px);
+    opacity: 0.1;
+    z-index: -2;
+    pointer-events: none;
 }
 
 .skill-card:hover {
@@ -765,48 +760,44 @@ body {
 .service-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid #ff8c00;
     border-radius: 8px;
     padding: var(--spacing-md);
     transition: var(--transition-normal);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 140, 0, 0.1),
+        0 0 40px rgba(176, 38, 255, 0.05),
+        inset 0 0 20px rgba(255, 140, 0, 0.05);
     isolation: isolate;
     background-clip: padding-box;
 }
 
-/* Electric Border Effect - Purple/Orange Diagonal Lines */
-
+/* Electric Border Effect with SVG Filter - Purple/Orange */
 .service-card::before {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    padding: 2px;
-    background: linear-gradient(45deg, transparent 30%, #ff8c00 40%, #b026ff 50%, #ff8c00 60%, transparent 70%);
-    background-size: 200% 200%;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: electricDiagonal 3s linear infinite;
+    border: 2px solid #ff8c00;
+    filter: url(#electro-filter-purple);
     z-index: -1;
+    pointer-events: none;
 }
 
+/* Glow Layer 1 */
 .service-card::after {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    padding: 2px;
-    background: linear-gradient(-45deg, transparent 30%, #b026ff 40%, #ff8c00 50%, #b026ff 60%, transparent 70%);
-    background-size: 200% 200%;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: electricDiagonal 3s linear infinite reverse;
-    z-index: -1;
-    opacity: 0.6;
+    border: 2px solid rgba(255, 140, 0, 0.7);
+    filter: blur(2.4px);
+    opacity: 0.1;
+    z-index: -2;
+    pointer-events: none;
 }
 
 .service-card:hover {
@@ -882,47 +873,43 @@ body {
 .project-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid #00ffff;
     border-radius: 8px;
     overflow: hidden;
     transition: var(--transition-normal);
     position: relative;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(0, 255, 255, 0.1),
+        0 0 40px rgba(0, 255, 255, 0.05),
+        inset 0 0 20px rgba(0, 255, 255, 0.05);
     isolation: isolate;
     background-clip: padding-box;
 }
 
-/* Electric Border Effect - Diagonal Lines */
-
+/* Electric Border Effect with SVG Filter */
 .project-card::before {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    padding: 2px;
-    background: linear-gradient(45deg, transparent 30%, #00ffff 50%, transparent 70%);
-    background-size: 200% 200%;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: electricDiagonal 3s linear infinite;
+    border: 2px solid #00ffff;
+    filter: url(#electro-filter-cyan);
     z-index: 1;
+    pointer-events: none;
 }
 
+/* Glow Layer 1 */
 .project-card::after {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    padding: 2px;
-    background: linear-gradient(-45deg, transparent 30%, #00ffff 50%, transparent 70%);
-    background-size: 200% 200%;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: electricDiagonal 3s linear infinite reverse;
-    z-index: 1;
-    opacity: 0.6;
+    border: 2px solid rgba(0, 255, 255, 0.7);
+    filter: blur(2.4px);
+    opacity: 0.1;
+    z-index: 0;
+    pointer-events: none;
 }
 
 .project-card:hover {
@@ -1013,46 +1000,42 @@ body {
 .testimonial-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: 2px solid transparent;
+    border: 2px solid #00ffff;
     border-radius: 8px;
     padding: var(--spacing-md);
     transition: var(--transition-normal);
     position: relative;
     isolation: isolate;
     background-clip: padding-box;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.1),
+        0 0 40px rgba(0, 255, 255, 0.05),
+        inset 0 0 20px rgba(0, 255, 255, 0.05);
 }
 
-/* Electric Border Effect - Diagonal Lines */
-
+/* Electric Border Effect with SVG Filter */
 .testimonial-card::before {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    padding: 2px;
-    background: linear-gradient(45deg, transparent 30%, #00ffff 50%, transparent 70%);
-    background-size: 200% 200%;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: electricDiagonal 3s linear infinite;
+    border: 2px solid #00ffff;
+    filter: url(#electro-filter-cyan);
     z-index: -1;
+    pointer-events: none;
 }
 
+/* Glow Layer 1 */
 .testimonial-card::after {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    padding: 2px;
-    background: linear-gradient(-45deg, transparent 30%, #00ffff 50%, transparent 70%);
-    background-size: 200% 200%;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    animation: electricDiagonal 3s linear infinite reverse;
-    z-index: -1;
-    opacity: 0.6;
+    border: 2px solid rgba(0, 255, 255, 0.7);
+    filter: blur(2.4px);
+    opacity: 0.1;
+    z-index: -2;
+    pointer-events: none;
 }
 
 .testimonial-text::before {

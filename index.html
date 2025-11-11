@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WordPress Developer & Vibe Coder - AI-Assisted Software Development Portfolio">
     <meta name="keywords" content="WordPress Developer, Web Developer, Vibe Coder, AI-Assisted Development, Cursor, Replit">
-    <meta name="version" content="1.0.25" id="appVersion">
+    <meta name="version" content="1.0.33" id="appVersion">
     <title>Fidelzky | Wordpress Developer & Vibe Coder</title>
     <link rel="icon" type="image/png" href="./FCenteno%20Favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -98,6 +98,38 @@
             </button>
         </div>
     </nav>
+
+    <!-- SVG Filters for Electric Border Effect -->
+    <svg class="absolute w-0 h-0" aria-hidden="true" focusable="false">
+        <defs>
+            <!-- Electric Border Filter for Cyan Cards -->
+            <filter id="electro-filter-cyan" x="-200%" y="-200%" width="500%" height="500%">
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="8" result="turb1" seed="1" />
+                <feOffset in="turb1" dx="0" dy="0" result="offset1">
+                    <animate attributeName="dy" values="600;0" dur="6s" repeatCount="indefinite" />
+                </feOffset>
+                <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="8" result="turb2" seed="2" />
+                <feOffset in="turb2" dx="0" dy="0" result="offset2">
+                    <animate attributeName="dx" values="0;-600" dur="6s" repeatCount="indefinite" />
+                </feOffset>
+                <feBlend in="offset1" in2="offset2" mode="lighten" result="mix" />
+                <feDisplacementMap in="SourceGraphic" in2="mix" scale="35" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+            <!-- Electric Border Filter for Purple/Orange Cards -->
+            <filter id="electro-filter-purple" x="-200%" y="-200%" width="500%" height="500%">
+                <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="8" result="turb1" seed="3" />
+                <feOffset in="turb1" dx="0" dy="0" result="offset1">
+                    <animate attributeName="dy" values="600;0" dur="5s" repeatCount="indefinite" />
+                </feOffset>
+                <feTurbulence type="turbulence" baseFrequency="0.03" numOctaves="8" result="turb2" seed="4" />
+                <feOffset in="turb2" dx="0" dy="0" result="offset2">
+                    <animate attributeName="dx" values="0;-600" dur="5s" repeatCount="indefinite" />
+                </feOffset>
+                <feBlend in="offset1" in2="offset2" mode="lighten" result="mix" />
+                <feDisplacementMap in="SourceGraphic" in2="mix" scale="35" xChannelSelector="R" yChannelSelector="G" />
+            </filter>
+        </defs>
+    </svg>
 
     <!-- Hero/About Section -->
     <section id="about" class="hero">
