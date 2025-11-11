@@ -220,17 +220,30 @@ function renderTimeline(events) {
     if (!timelineContainer) return;
 
     // If no events provided, show default example
+    // Timeline goes from oldest (top) to newest (bottom)
     if (!events || events.length === 0) {
         events = [
             {
-                year: "2024",
-                title: "Web Developer",
-                subtitle: "Joseph Media Group",
-                dateRange: "Feb 2024 - Present · 1 yr 10 mos",
+                year: "2021",
+                title: "Information Technology Specialist",
+                subtitle: "All-Out Food Products",
+                dateRange: "Jan 2021 - Sep 2023 · 2 yrs 9 mos",
                 bullets: [
-                    "Developed tailored digital solutions using WordPress, enhancing project outcomes for diverse digital projects",
-                    "Designed and implemented over 50 web designs, including landing pages and e-commerce sites, boosting client engagement by 20%",
-                    "Collaborated with cross-functional teams to align innovative projects with business goals, leveraging technical expertise"
+                    "Managed and maintained All-Out Food Products' website and digital systems for optimal performance",
+                    "Implemented technical SEO strategies that significantly improved search rankings and organic traffic",
+                    "Planned and executed social media advertisements, enhancing brand awareness and customer engagement",
+                    "Oversaw IT infrastructure to ensure data security and efficient digital workflows"
+                ]
+            },
+            {
+                year: "2023",
+                title: "Web Developer",
+                subtitle: "Body & Mind Natural Health",
+                dateRange: "Nov 2023 - Dec 2024 · 1 yr 2 mos",
+                bullets: [
+                    "Designed and maintained a responsive WordPress website, focusing on speed and mobile performance",
+                    "Customized themes and plugins to enhance user experience and streamline functionality",
+                    "Implemented technical SEO strategies, improving website performance and organic traffic significantly"
                 ]
             },
             {
@@ -246,26 +259,14 @@ function renderTimeline(events) {
                 ]
             },
             {
-                year: "2023",
+                year: "2024",
                 title: "Web Developer",
-                subtitle: "Body & Mind Natural Health",
-                dateRange: "Nov 2023 - Dec 2024 · 1 yr 2 mos",
+                subtitle: "Joseph Media Group",
+                dateRange: "Feb 2024 - Nov 2025",
                 bullets: [
-                    "Designed and maintained a responsive WordPress website, focusing on speed and mobile performance",
-                    "Customized themes and plugins to enhance user experience and streamline functionality",
-                    "Implemented technical SEO strategies, improving website performance and organic traffic significantly"
-                ]
-            },
-            {
-                year: "2021",
-                title: "Information Technology Specialist",
-                subtitle: "All-Out Food Products",
-                dateRange: "Jan 2021 - Sep 2023 · 2 yrs 9 mos",
-                bullets: [
-                    "Managed and maintained All-Out Food Products' website and digital systems for optimal performance",
-                    "Implemented technical SEO strategies that significantly improved search rankings and organic traffic",
-                    "Planned and executed social media advertisements, enhancing brand awareness and customer engagement",
-                    "Oversaw IT infrastructure to ensure data security and efficient digital workflows"
+                    "Developed tailored digital solutions using WordPress, enhancing project outcomes for diverse digital projects",
+                    "Designed and implemented over 50 web designs, including landing pages and e-commerce sites, boosting client engagement by 20%",
+                    "Collaborated with cross-functional teams to align innovative projects with business goals, leveraging technical expertise"
                 ]
             }
         ];
