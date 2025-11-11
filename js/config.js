@@ -27,6 +27,7 @@ function getDefaultConfig() {
         },
         skills: [],
         projects: [],
+        timeline: [],
         testimonials: [],
         contact: {
             email: "your.email@example.com",
@@ -95,6 +96,11 @@ function applyConfig() {
     // Apply projects
     if (portfolioConfig.projects && Array.isArray(portfolioConfig.projects)) {
         renderProjects(portfolioConfig.projects);
+    }
+
+    // Apply timeline
+    if (portfolioConfig.timeline && Array.isArray(portfolioConfig.timeline)) {
+        renderTimeline(portfolioConfig.timeline);
     }
 
     // Apply testimonials
@@ -206,6 +212,155 @@ function renderProjects(projects) {
             </div>
         </div>
     `).join('');
+}
+
+function renderTimeline(events) {
+    const timelineContainer = document.getElementById('timelineContainer');
+    if (!timelineContainer) return;
+
+    // Create timeline line and progress elements
+    const timelineLine = document.createElement('div');
+    timelineLine.className = 'timeline-line';
+    
+    const timelineProgress = document.createElement('div');
+    timelineProgress.className = 'timeline-progress';
+    timelineProgress.id = 'timelineProgress';
+    
+    const timelineComet = document.createElement('div');
+    timelineComet.className = 'timeline-progress-comet';
+    timelineComet.id = 'timelineComet';
+
+    // Render events
+    const eventsHTML = events.map((event, index) => {
+        const description = event.description || '';
+        const bullets = event.bullets || [];
+        
+        let descriptionHTML = '';
+        if (description) {
+            descriptionHTML = `<p class="timeline-event-description">${description}</p>`;
+        }
+        
+        if (bullets.length > 0) {
+            descriptionHTML += '<ul class="timeline-event-description">';
+            bullets.forEach(bullet => {
+                descriptionHTML += `<li>${bullet}</li>`;
+            });
+            descriptionHTML += '</ul>';
+        }
+
+        return `
+            <div class="timeline-event" data-index="${index}">
+                <div class="timeline-node"></div>
+                <div class="timeline-event-content">
+                    <div class="timeline-event-year">
+                        <i class="fas fa-calendar-alt"></i>
+                        ${event.year || event.date || ''}
+                    </div>
+                    <h3 class="timeline-event-title">${event.title || ''}</h3>
+                    ${event.subtitle ? `<p class="timeline-event-subtitle">${event.subtitle}</p>` : ''}
+                    ${event.dateRange ? `<p class="timeline-event-date">${event.dateRange}</p>` : ''}
+                    ${descriptionHTML}
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    timelineContainer.innerHTML = eventsHTML;
+    
+    // Add timeline line and progress elements
+    timelineContainer.insertAdjacentElement('afterbegin', timelineLine);
+    timelineContainer.insertAdjacentElement('afterbegin', timelineProgress);
+    timelineContainer.insertAdjacentElement('afterbegin', timelineComet);
+
+    // Initialize scroll animations
+    initTimelineScroll();
+}
+
+function initTimelineScroll() {
+    const timelineContainer = document.getElementById('timelineContainer');
+    if (!timelineContainer) return;
+
+    const events = timelineContainer.querySelectorAll('.timeline-event');
+    const progressLine = document.getElementById('timelineProgress');
+    const comet = document.getElementById('timelineComet');
+    
+    if (!progressLine || !comet) return;
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    events.forEach(event => {
+        observer.observe(event);
+    });
+
+    // Scroll progress tracking
+    let ticking = false;
+    
+    function updateTimelineProgress() {
+        if (!timelineContainer) return;
+
+        const containerRect = timelineContainer.getBoundingClientRect();
+        const containerTop = containerRect.top + window.scrollY;
+        const containerBottom = containerTop + containerRect.height;
+        const viewportTop = window.scrollY;
+        const viewportBottom = viewportTop + window.innerHeight;
+
+        // Calculate progress
+        let progress = 0;
+        if (viewportTop < containerTop) {
+            progress = 0;
+        } else if (viewportBottom > containerBottom) {
+            progress = 100;
+        } else {
+            const scrolled = viewportTop - containerTop;
+            const total = containerRect.height - window.innerHeight;
+            progress = Math.min(100, Math.max(0, (scrolled / total) * 100));
+        }
+
+        // Update progress line
+        progressLine.style.height = `${progress}%`;
+
+        // Update comet position
+        const cometTop = (progress / 100) * containerRect.height;
+        comet.style.top = `${cometTop}px`;
+
+        // Update active event
+        events.forEach((event) => {
+            const eventRect = event.getBoundingClientRect();
+            const eventTop = eventRect.top + window.scrollY;
+            const isInView = viewportTop < eventTop && viewportBottom > eventTop;
+            
+            if (isInView) {
+                event.classList.add('active');
+            } else {
+                event.classList.remove('active');
+            }
+        });
+
+        ticking = false;
+    }
+
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateTimelineProgress);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener('scroll', requestTick);
+    window.addEventListener('resize', requestTick);
+    updateTimelineProgress(); // Initial call
 }
 
 function renderTestimonials(testimonials) {

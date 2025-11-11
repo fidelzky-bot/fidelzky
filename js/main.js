@@ -163,6 +163,7 @@ generateCodeBackground('codeBackground', 20); // Hero section
 generateCodeBackground('codeBackgroundSkills', 12);
 generateCodeBackground('codeBackgroundServices', 12);
 generateCodeBackground('codeBackgroundProjects', 12);
+generateCodeBackground('codeBackgroundTimeline', 12);
 generateCodeBackground('codeBackgroundTestimonials', 12);
 generateCodeBackground('codeBackgroundFAQ', 12);
 generateCodeBackground('codeBackgroundContact', 12);
