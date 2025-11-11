@@ -233,7 +233,7 @@ body {
     padding: 0.5rem 1rem;
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: none;
     border-radius: 8px;
     display: inline-block;
     overflow: hidden;
@@ -271,7 +271,6 @@ body {
 
 .nav-link:hover {
     color: var(--neon-cyan);
-    border-color: var(--neon-cyan);
     animation: pulseGlowNav 2s ease-in-out infinite;
 }
 
