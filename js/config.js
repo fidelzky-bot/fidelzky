@@ -225,12 +225,47 @@ function renderTimeline(events) {
             {
                 year: "2024",
                 title: "Web Developer",
-                subtitle: "Your Company Name",
-                dateRange: "Feb 2024 - Present",
-                description: "Add your career timeline events in config.json",
+                subtitle: "Joseph Media Group",
+                dateRange: "Feb 2024 - Present · 1 yr 10 mos",
                 bullets: [
-                    "Update config.json with your timeline data",
-                    "Each event should have: year, title, subtitle, dateRange, and bullets"
+                    "Developed tailored digital solutions using WordPress, enhancing project outcomes for diverse digital projects",
+                    "Designed and implemented over 50 web designs, including landing pages and e-commerce sites, boosting client engagement by 20%",
+                    "Collaborated with cross-functional teams to align innovative projects with business goals, leveraging technical expertise"
+                ]
+            },
+            {
+                year: "2024",
+                title: "Web Developer",
+                subtitle: "Home at Peace",
+                dateRange: "Dec 2023 - Jun 2024 · 7 mos",
+                bullets: [
+                    "Developed and maintained the company's WordPress website, ensuring optimal performance and user-friendly navigation",
+                    "Implemented technical SEO strategies, including on-page optimization and schema markup, to enhance search visibility",
+                    "Achieved a Google PageSpeed score improvement from 65 to 90+, significantly reducing bounce rate by 35%",
+                    "Streamlined the caregiver recruitment process, resulting in a 60% increase in qualified job applications"
+                ]
+            },
+            {
+                year: "2023",
+                title: "Web Developer",
+                subtitle: "Body & Mind Natural Health",
+                dateRange: "Nov 2023 - Dec 2024 · 1 yr 2 mos",
+                bullets: [
+                    "Designed and maintained a responsive WordPress website, focusing on speed and mobile performance",
+                    "Customized themes and plugins to enhance user experience and streamline functionality",
+                    "Implemented technical SEO strategies, improving website performance and organic traffic significantly"
+                ]
+            },
+            {
+                year: "2021",
+                title: "Information Technology Specialist",
+                subtitle: "All-Out Food Products",
+                dateRange: "Jan 2021 - Sep 2023 · 2 yrs 9 mos",
+                bullets: [
+                    "Managed and maintained All-Out Food Products' website and digital systems for optimal performance",
+                    "Implemented technical SEO strategies that significantly improved search rankings and organic traffic",
+                    "Planned and executed social media advertisements, enhancing brand awareness and customer engagement",
+                    "Oversaw IT infrastructure to ensure data security and efficient digital workflows"
                 ]
             }
         ];
