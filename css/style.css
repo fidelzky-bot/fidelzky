@@ -1004,15 +1004,6 @@ body {
     transform: translateY(-5px);
 }
 
-.testimonial-card:hover {
-    box-shadow: 
-        0 0 20px rgba(0, 255, 255, 0.5),
-        0 0 40px rgba(0, 255, 255, 0.3),
-        0 0 60px rgba(0, 255, 255, 0.2),
-        inset 0 0 20px rgba(0, 255, 255, 0.1);
-    transform: translateY(-5px);
-}
-
 .testimonial-text {
     color: var(--text-secondary);
     font-style: italic;
