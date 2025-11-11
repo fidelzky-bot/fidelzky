@@ -648,32 +648,78 @@ body {
 .skill-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: none;
     border-radius: 8px;
     padding: var(--spacing-md);
     transition: var(--transition-normal);
     position: relative;
     overflow: hidden;
+    isolation: isolate;
 }
 
+/* Electric Border Effect */
 .skill-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
-    transition: var(--transition-slow);
+    inset: -2px;
+    border-radius: 8px;
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 2px;
+    animation: electricRotate 3s linear infinite;
+    z-index: -1;
 }
 
-.skill-card:hover::before {
-    left: 100%;
+.skill-card::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 8px;
+    background: conic-gradient(
+        from 180deg,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 2px;
+    animation: electricRotate 3s linear infinite reverse;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+@keyframes electricRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .skill-card:hover {
-    border-color: var(--neon-cyan);
-    box-shadow: var(--glow-cyan);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.5),
+        0 0 40px rgba(0, 255, 255, 0.3),
+        0 0 60px rgba(0, 255, 255, 0.2),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
     transform: translateY(-5px);
 }
 
@@ -733,50 +779,73 @@ body {
 .service-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: none;
     border-radius: 8px;
     padding: var(--spacing-md);
     transition: var(--transition-normal);
     position: relative;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    isolation: isolate;
 }
 
+/* Electric Border Effect - Purple/Orange */
 .service-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(176, 38, 255, 0.1), transparent);
-    transition: var(--transition-slow);
+    inset: -2px;
+    border-radius: 8px;
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        transparent,
+        #ff8c00,
+        #b026ff,
+        transparent,
+        transparent,
+        #ff8c00,
+        transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 2px;
+    animation: electricRotate 3s linear infinite;
+    z-index: -1;
 }
 
 .service-card::after {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(176, 38, 255, 0.1) 0%, transparent 70%);
-    opacity: 0;
-    transition: var(--transition-slow);
-    pointer-events: none;
-}
-
-.service-card:hover::before {
-    left: 100%;
-}
-
-.service-card:hover::after {
-    opacity: 1;
+    inset: -2px;
+    border-radius: 8px;
+    background: conic-gradient(
+        from 180deg,
+        transparent,
+        transparent,
+        #b026ff,
+        #ff8c00,
+        transparent,
+        transparent,
+        #b026ff,
+        transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 2px;
+    animation: electricRotate 3s linear infinite reverse;
+    z-index: -1;
+    opacity: 0.7;
 }
 
 .service-card:hover {
-    border-color: var(--neon-purple);
-    box-shadow: var(--glow-purple), 0 0 40px rgba(176, 38, 255, 0.4), 0 0 60px rgba(176, 38, 255, 0.2);
+    box-shadow: 
+        0 0 20px rgba(255, 140, 0, 0.5),
+        0 0 40px rgba(176, 38, 255, 0.5),
+        0 0 60px rgba(255, 140, 0, 0.3),
+        0 0 80px rgba(176, 38, 255, 0.2),
+        inset 0 0 20px rgba(255, 140, 0, 0.1);
     transform: translateY(-5px);
 }
 
@@ -843,51 +912,69 @@ body {
 .project-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: none;
     border-radius: 8px;
     overflow: hidden;
     transition: var(--transition-normal);
     position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    isolation: isolate;
 }
 
+/* Electric Border Effect */
 .project-card::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 255, 255, 0.15) 0%, transparent 70%);
-    opacity: 0;
-    transition: var(--transition-slow);
-    pointer-events: none;
+    inset: -2px;
+    border-radius: 8px;
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 2px;
+    animation: electricRotate 3s linear infinite;
     z-index: 1;
 }
 
 .project-card::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
-    transition: var(--transition-slow);
-    z-index: 2;
-}
-
-.project-card:hover::before {
-    opacity: 1;
-}
-
-.project-card:hover::after {
-    left: 100%;
+    inset: -2px;
+    border-radius: 8px;
+    background: conic-gradient(
+        from 180deg,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 2px;
+    animation: electricRotate 3s linear infinite reverse;
+    z-index: 1;
+    opacity: 0.7;
 }
 
 .project-card:hover {
-    border-color: var(--neon-cyan);
-    box-shadow: var(--glow-cyan), 0 0 40px rgba(0, 255, 255, 0.4), 0 0 60px rgba(0, 255, 255, 0.2);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.5),
+        0 0 40px rgba(0, 255, 255, 0.3),
+        0 0 60px rgba(0, 255, 255, 0.2),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
     transform: translateY(-5px);
 }
 
@@ -970,27 +1057,80 @@ body {
 .testimonial-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 255, 255, 0.2);
+    border: none;
     border-radius: 8px;
     padding: var(--spacing-md);
     transition: var(--transition-normal);
     position: relative;
+    isolation: isolate;
 }
 
+/* Electric Border Effect */
 .testimonial-card::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 8px;
+    background: conic-gradient(
+        from 0deg,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 2px;
+    animation: electricRotate 3s linear infinite;
+    z-index: -1;
+}
+
+.testimonial-card::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 8px;
+    background: conic-gradient(
+        from 180deg,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent,
+        transparent,
+        #00ffff,
+        transparent
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 2px;
+    animation: electricRotate 3s linear infinite reverse;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+.testimonial-text::before {
     content: '"';
     position: absolute;
     top: -10px;
-    left: 1rem;
+    left: 0;
     font-size: 4rem;
     color: var(--neon-cyan);
     opacity: 0.3;
     font-family: serif;
+    z-index: 0;
 }
 
 .testimonial-card:hover {
-    border-color: var(--neon-cyan);
-    box-shadow: var(--glow-cyan);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.5),
+        0 0 40px rgba(0, 255, 255, 0.3),
+        0 0 60px rgba(0, 255, 255, 0.2),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
     transform: translateY(-5px);
 }
 
@@ -999,6 +1139,7 @@ body {
     font-style: italic;
     margin-bottom: var(--spacing-sm);
     padding-top: 1rem;
+    padding-left: 1rem;
     line-height: 1.8;
     position: relative;
     z-index: 1;
