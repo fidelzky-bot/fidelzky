@@ -1067,7 +1067,7 @@ body {
 
 .timeline-event:nth-child(odd) .timeline-event-content {
     margin-right: auto;
-    text-align: right;
+    text-align: left;
 }
 
 .timeline-event:nth-child(even) .timeline-event-content {
@@ -1132,6 +1132,7 @@ body {
     margin-bottom: 0.5rem;
     color: var(--text-secondary);
     line-height: 1.6;
+    list-style: none;
 }
 
 .timeline-event-description li::before {
