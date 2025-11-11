@@ -648,36 +648,30 @@ body {
 .skill-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: none;
+    border: 2px solid transparent;
     border-radius: 8px;
     padding: var(--spacing-md);
     transition: var(--transition-normal);
     position: relative;
     overflow: hidden;
     isolation: isolate;
+    background-clip: padding-box;
 }
 
-/* Electric Border Effect */
+/* Electric Border Effect - Diagonal Lines */
+
 .skill-card::before {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    background: conic-gradient(
-        from 0deg,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent
-    );
+    padding: 2px;
+    background: linear-gradient(45deg, transparent 30%, #00ffff 50%, transparent 70%);
+    background-size: 200% 200%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    padding: 2px;
-    animation: electricRotate 3s linear infinite;
+    animation: electricDiagonal 3s linear infinite;
     z-index: -1;
 }
 
@@ -686,31 +680,23 @@ body {
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    background: conic-gradient(
-        from 180deg,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent
-    );
+    padding: 2px;
+    background: linear-gradient(-45deg, transparent 30%, #00ffff 50%, transparent 70%);
+    background-size: 200% 200%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    padding: 2px;
-    animation: electricRotate 3s linear infinite reverse;
+    animation: electricDiagonal 3s linear infinite reverse;
     z-index: -1;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
-@keyframes electricRotate {
+@keyframes electricDiagonal {
     0% {
-        transform: rotate(0deg);
+        background-position: -100% -100%;
     }
     100% {
-        transform: rotate(360deg);
+        background-position: 100% 100%;
     }
 }
 
@@ -779,7 +765,7 @@ body {
 .service-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: none;
+    border: 2px solid transparent;
     border-radius: 8px;
     padding: var(--spacing-md);
     transition: var(--transition-normal);
@@ -787,30 +773,23 @@ body {
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     isolation: isolate;
+    background-clip: padding-box;
 }
 
-/* Electric Border Effect - Purple/Orange */
+/* Electric Border Effect - Purple/Orange Diagonal Lines */
+
 .service-card::before {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    background: conic-gradient(
-        from 0deg,
-        transparent,
-        transparent,
-        #ff8c00,
-        #b026ff,
-        transparent,
-        transparent,
-        #ff8c00,
-        transparent
-    );
+    padding: 2px;
+    background: linear-gradient(45deg, transparent 30%, #ff8c00 40%, #b026ff 50%, #ff8c00 60%, transparent 70%);
+    background-size: 200% 200%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    padding: 2px;
-    animation: electricRotate 3s linear infinite;
+    animation: electricDiagonal 3s linear infinite;
     z-index: -1;
 }
 
@@ -819,24 +798,15 @@ body {
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    background: conic-gradient(
-        from 180deg,
-        transparent,
-        transparent,
-        #b026ff,
-        #ff8c00,
-        transparent,
-        transparent,
-        #b026ff,
-        transparent
-    );
+    padding: 2px;
+    background: linear-gradient(-45deg, transparent 30%, #b026ff 40%, #ff8c00 50%, #b026ff 60%, transparent 70%);
+    background-size: 200% 200%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    padding: 2px;
-    animation: electricRotate 3s linear infinite reverse;
+    animation: electricDiagonal 3s linear infinite reverse;
     z-index: -1;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .service-card:hover {
@@ -912,36 +882,30 @@ body {
 .project-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: none;
+    border: 2px solid transparent;
     border-radius: 8px;
     overflow: hidden;
     transition: var(--transition-normal);
     position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     isolation: isolate;
+    background-clip: padding-box;
 }
 
-/* Electric Border Effect */
+/* Electric Border Effect - Diagonal Lines */
+
 .project-card::before {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    background: conic-gradient(
-        from 0deg,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent
-    );
+    padding: 2px;
+    background: linear-gradient(45deg, transparent 30%, #00ffff 50%, transparent 70%);
+    background-size: 200% 200%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    padding: 2px;
-    animation: electricRotate 3s linear infinite;
+    animation: electricDiagonal 3s linear infinite;
     z-index: 1;
 }
 
@@ -950,23 +914,15 @@ body {
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    background: conic-gradient(
-        from 180deg,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent
-    );
+    padding: 2px;
+    background: linear-gradient(-45deg, transparent 30%, #00ffff 50%, transparent 70%);
+    background-size: 200% 200%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    padding: 2px;
-    animation: electricRotate 3s linear infinite reverse;
+    animation: electricDiagonal 3s linear infinite reverse;
     z-index: 1;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .project-card:hover {
@@ -1057,35 +1013,29 @@ body {
 .testimonial-card {
     background: var(--bg-glass);
     backdrop-filter: blur(10px);
-    border: none;
+    border: 2px solid transparent;
     border-radius: 8px;
     padding: var(--spacing-md);
     transition: var(--transition-normal);
     position: relative;
     isolation: isolate;
+    background-clip: padding-box;
 }
 
-/* Electric Border Effect */
+/* Electric Border Effect - Diagonal Lines */
+
 .testimonial-card::before {
     content: '';
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    background: conic-gradient(
-        from 0deg,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent
-    );
+    padding: 2px;
+    background: linear-gradient(45deg, transparent 30%, #00ffff 50%, transparent 70%);
+    background-size: 200% 200%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    padding: 2px;
-    animation: electricRotate 3s linear infinite;
+    animation: electricDiagonal 3s linear infinite;
     z-index: -1;
 }
 
@@ -1094,23 +1044,15 @@ body {
     position: absolute;
     inset: -2px;
     border-radius: 8px;
-    background: conic-gradient(
-        from 180deg,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent,
-        transparent,
-        #00ffff,
-        transparent
-    );
+    padding: 2px;
+    background: linear-gradient(-45deg, transparent 30%, #00ffff 50%, transparent 70%);
+    background-size: 200% 200%;
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
-    padding: 2px;
-    animation: electricRotate 3s linear infinite reverse;
+    animation: electricDiagonal 3s linear infinite reverse;
     z-index: -1;
-    opacity: 0.7;
+    opacity: 0.6;
 }
 
 .testimonial-text::before {
