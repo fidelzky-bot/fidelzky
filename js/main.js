@@ -431,14 +431,26 @@ setTimeout(initMovingParticles, 1500);
 // Social Proof Notifications
 // ============================================
 
+// Random countries for location-based notifications
+const countries = [
+    'Canada', 'Australia', 'United States', 'United Kingdom', 'Germany', 
+    'France', 'Spain', 'Italy', 'Netherlands', 'Sweden', 'Norway', 'Denmark',
+    'Japan', 'South Korea', 'Singapore', 'India', 'Brazil', 'Mexico',
+    'Argentina', 'South Africa', 'New Zealand', 'Ireland', 'Switzerland'
+];
+
+function getRandomCountry() {
+    return countries[Math.floor(Math.random() * countries.length)];
+}
+
 const socialProofMessages = [
     // Contact/Message Activity
     { icon: '💬', text: 'Someone just sent a message through the contact form.' },
     { icon: '✉️', text: 'A visitor just reached out about a new project!' },
     { icon: '💼', text: 'New inquiry received — someone\'s interested in web development services.' },
-    { icon: '👋', text: 'Visitor from Canada just sent a message.' },
+    { icon: '👋', text: () => `Visitor from ${getRandomCountry()} just sent a message.` },
     { icon: '📬', text: 'A potential client just dropped a message!' },
-    { icon: '🌎', text: 'Visitor from Australia just viewed this portfolio.' },
+    { icon: '🌎', text: () => `Visitor from ${getRandomCountry()} just viewed this portfolio.` },
     { icon: '👁️', text: 'Someone is checking the "About Me" page right now.' },
     { icon: '💻', text: 'Visitor exploring the "Recent Projects" showcase.' },
     { icon: '👀', text: 'Someone is viewing the "WordPress Projects" section.' },
@@ -477,7 +489,9 @@ function createNotification(messageObj) {
     
     const text = document.createElement('div');
     text.className = 'social-proof-text';
-    text.textContent = messageObj.text;
+    // Handle both string and function text (for dynamic content like random countries)
+    const messageText = typeof messageObj.text === 'function' ? messageObj.text() : messageObj.text;
+    text.textContent = messageText;
     
     const closeBtn = document.createElement('button');
     closeBtn.className = 'social-proof-close';
