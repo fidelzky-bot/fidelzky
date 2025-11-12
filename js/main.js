@@ -824,6 +824,12 @@ function openResumeModal() {
     if (modal) {
         modal.classList.add('active');
         document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        // Ensure custom cursor is visible
+        const cursor = document.querySelector('.custom-cursor');
+        if (cursor) {
+            cursor.style.opacity = '1';
+            cursor.style.zIndex = '10002';
+        }
     }
 }
 

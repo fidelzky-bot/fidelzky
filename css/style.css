@@ -82,7 +82,7 @@ body {
     background: radial-gradient(circle, var(--neon-cyan), transparent);
     border: 2px solid var(--neon-cyan);
     pointer-events: none;
-    z-index: 9999;
+    z-index: 10002;
     mix-blend-mode: screen;
     box-shadow: 
         0 0 10px var(--neon-cyan),
@@ -1269,6 +1269,13 @@ body {
     display: flex;
     flex-direction: column;
     z-index: 10001;
+}
+
+/* Ensure custom cursor is visible over modal */
+.resume-modal.active ~ * .custom-cursor,
+body:has(.resume-modal.active) .custom-cursor {
+    z-index: 10002 !important;
+    opacity: 1 !important;
 }
 
 .resume-modal-header {
