@@ -264,9 +264,12 @@ function renderTimeline(events) {
                 subtitle: "Joseph Media Group",
                 dateRange: "Feb 2024 - Nov 2025",
                 bullets: [
-                    "Developed tailored digital solutions using WordPress, enhancing project outcomes for diverse digital projects",
-                    "Designed and implemented over 50 web designs, including landing pages and e-commerce sites, boosting client engagement by 20%",
-                    "Collaborated with cross-functional teams to align innovative projects with business goals, leveraging technical expertise"
+                    "Developed tailored digital solutions using WordPress, enhancing outcomes for diverse digital projects",
+                    "Designed and implemented 50+ web designs, including landing pages, sales funnels, and e-commerce websites, resulting in a 20% increase in client engagement",
+                    "Created a Listing Directory Website functioning as a lead magnet, successfully generating leads through active directory listers",
+                    "Developed SaaS tools to streamline business operations, automate workflows, and improve user experience across digital platforms",
+                    "Built AI-powered tools that leveraged automation and intelligent design to optimize content creation, lead generation, and user engagement",
+                    "Collaborated with cross functional teams to deliver innovative projects aligned with business objectives, leveraging technical expertise for sustainable results"
                 ]
             }
         ];

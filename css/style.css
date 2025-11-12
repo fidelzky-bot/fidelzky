@@ -972,8 +972,36 @@ body {
 .timeline-subtitle {
     text-align: center;
     color: var(--text-secondary);
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
     font-size: 1.1rem;
+}
+
+.timeline-resume-button-container {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.btn-resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: var(--bg-glass);
+    border-color: rgba(0, 255, 255, 0.3);
+    color: var(--neon-cyan);
+    padding: 0.9rem 2.5rem;
+    font-size: 1rem;
+    transition: var(--transition-normal);
+}
+
+.btn-resume i {
+    font-size: 1.2rem;
+}
+
+.btn-resume:hover {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    transform: translateY(-2px);
+    animation: pulseGlowCyan 2s ease-in-out infinite;
 }
 
 .timeline-container {
@@ -1199,6 +1227,15 @@ body {
 
     .timeline-progress-comet {
         left: 30px;
+    }
+
+    .btn-resume {
+        padding: 0.75rem 2rem;
+        font-size: 0.9rem;
+    }
+
+    .btn-resume i {
+        font-size: 1.1rem;
     }
 }
 
