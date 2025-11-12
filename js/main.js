@@ -815,3 +815,30 @@ if (document.readyState === 'loading') {
     initBackToTop();
 }
 
+// ============================================
+// Resume/CV Modal Popup
+// ============================================
+
+function openResumeModal() {
+    const modal = document.getElementById('resumeModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+function closeResumeModal() {
+    const modal = document.getElementById('resumeModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeResumeModal();
+    }
+});
+
