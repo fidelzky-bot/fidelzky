@@ -1250,12 +1250,10 @@ body {
     width: 100%;
     height: 100%;
     z-index: 10000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--transition-normal), visibility var(--transition-normal);
+    background: var(--bg-primary);
 }
 
 .resume-modal.active {
@@ -1263,47 +1261,24 @@ body {
     visibility: visible;
 }
 
-.resume-modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(5px);
-    cursor: pointer;
-}
-
 .resume-modal-content {
     position: relative;
-    width: 90%;
-    max-width: 900px;
-    max-height: 90vh;
-    background: var(--bg-secondary);
-    border: 1px solid rgba(0, 255, 255, 0.3);
-    border-radius: 12px;
-    box-shadow: 
-        0 10px 40px rgba(0, 0, 0, 0.5),
-        0 0 30px rgba(0, 255, 255, 0.2);
+    width: 100%;
+    height: 100%;
+    background: var(--bg-primary);
     display: flex;
     flex-direction: column;
-    transform: scale(0.9) translateY(20px);
-    transition: transform var(--transition-normal);
     z-index: 10001;
-}
-
-.resume-modal.active .resume-modal-content {
-    transform: scale(1) translateY(0);
 }
 
 .resume-modal-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
     border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-    background: var(--bg-tertiary);
-    border-radius: 12px 12px 0 0;
+    background: var(--bg-secondary);
+    flex-shrink: 0;
 }
 
 .resume-modal-header h3 {
@@ -1339,48 +1314,26 @@ body {
 }
 
 .resume-modal-body {
-    padding: var(--spacing-md);
+    padding: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     flex: 1;
     min-height: 0;
+    height: calc(100% - 60px);
 }
 
 .resume-pdf-viewer {
     width: 100%;
-    height: 60vh;
-    min-height: 400px;
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    border-radius: 8px;
+    height: 100%;
+    border: none;
     background: var(--bg-primary);
-    margin-bottom: var(--spacing-md);
-}
-
-.resume-modal-actions {
-    display: flex;
-    justify-content: center;
-    gap: var(--spacing-sm);
-    padding-top: var(--spacing-sm);
-    border-top: 1px solid rgba(0, 255, 255, 0.1);
-}
-
-.resume-modal-actions .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 /* Responsive Design for Modal */
 @media (max-width: 768px) {
-    .resume-modal-content {
-        width: 95%;
-        max-height: 95vh;
-    }
-
-    .resume-pdf-viewer {
-        height: 50vh;
-        min-height: 300px;
+    .resume-modal-header {
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
 
     .resume-modal-header h3 {
@@ -1391,6 +1344,10 @@ body {
         width: 35px;
         height: 35px;
         font-size: 1rem;
+    }
+
+    .resume-modal-body {
+        height: calc(100% - 50px);
     }
 }
 
