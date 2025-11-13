@@ -269,6 +269,7 @@ function renderTimeline(events) {
                     "Created a Listing Directory Website functioning as a lead magnet, successfully generating leads through active directory listers",
                     "Developed SaaS tools to streamline business operations, automate workflows, and improve user experience across digital platforms",
                     "Built AI-powered tools that leveraged automation and intelligent design to optimize content creation, lead generation, and user engagement",
+                    "Built and deployed AI Agents, Chatbots, and AI-powered Call Assistants to enhance customer interaction, automate communication, and improve service efficiency",
                     "Collaborated with cross functional teams to deliver innovative projects aligned with business objectives, leveraging technical expertise for sustainable results"
                 ]
             }
