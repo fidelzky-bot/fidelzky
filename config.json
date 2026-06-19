@@ -68,24 +68,16 @@
       "level": 85
     },
     {
-      "name": "Adobe Premiere Pro",
-      "level": 85
-    },
-    {
       "name": "DaVinci Resolve",
       "level": 80
     },
     {
-      "name": "After Effects",
-      "level": 75
+      "name": "CapCut",
+      "level": 85
     },
     {
       "name": "Video Editing",
       "level": 85
-    },
-    {
-      "name": "Motion Graphics",
-      "level": 70
     }
   ],
   "services": [
@@ -184,11 +176,11 @@
       "github": ""
     },
     {
-      "title": "ChatLLM - FetchLawyer",
-      "description": "An AI-powered legal chatbot platform built with Large Language Model technology, providing intelligent legal assistance and consultation services through conversational interfaces for legal professionals and clients.",
-      "image": "images/chatllm.png",
-      "tech": ["WordPress", "AI/LLM", "JavaScript", "API Integration"],
-      "demo": "https://chatllm.fetchlawyer.com/",
+      "title": "Injury Lawyers (a Law Firm Website)",
+      "description": "A professional law firm website for injury lawyers, built with WordPress to showcase legal services, build client trust, and drive consultations through a clean, conversion-focused design.",
+      "image": "images/bill.png",
+      "tech": ["WordPress", "PHP", "JavaScript", "CSS"],
+      "demo": "https://billeasterly.com/",
       "github": ""
     },
     {
@@ -200,6 +192,7 @@
       "github": ""
     }
   ],
+  "videoProjects": [],
   "testimonials": [
     {
       "name": "Carol H.",
@@ -260,7 +253,7 @@
     },
     {
       "question": "What types of video editing services do you offer?",
-      "answer": "I offer professional video editing for social media content, promotional videos, YouTube videos, reels, short-form content, and brand storytelling. Services include cutting and sequencing, color grading, audio enhancement, motion graphics, subtitles/captions, and polished post-production using tools like Adobe Premiere Pro, DaVinci Resolve, and After Effects."
+      "answer": "I offer professional video editing for social media content, promotional videos, YouTube videos, reels, short-form content, and brand storytelling. Services include cutting and sequencing, color grading, audio enhancement, subtitles/captions, and polished post-production using tools like CapCut and DaVinci Resolve."
     },
     {
       "question": "Can you handle both web development and video editing for the same project?",

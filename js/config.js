@@ -27,6 +27,7 @@ function getDefaultConfig() {
         },
         skills: [],
         projects: [],
+        videoProjects: [],
         timeline: [],
         testimonials: [],
         contact: {
@@ -99,7 +100,12 @@ function applyConfig() {
 
     // Apply projects
     if (portfolioConfig.projects && Array.isArray(portfolioConfig.projects)) {
-        renderProjects(portfolioConfig.projects);
+        renderProjects(portfolioConfig.projects, 'projectsGrid', 'Live Demo');
+    }
+
+    // Apply video projects
+    if (portfolioConfig.videoProjects && Array.isArray(portfolioConfig.videoProjects)) {
+        renderProjects(portfolioConfig.videoProjects, 'videoProjectsGrid', 'Watch Video');
     }
 
     // Apply timeline (always render, even if empty - will show default)
@@ -195,8 +201,8 @@ function renderServices(services) {
     `).join('');
 }
 
-function renderProjects(projects) {
-    const projectsGrid = document.getElementById('projectsGrid');
+function renderProjects(projects, gridId = 'projectsGrid', demoLabel = 'Live Demo') {
+    const projectsGrid = document.getElementById(gridId);
     if (!projectsGrid) return;
 
     projectsGrid.innerHTML = projects.map(project => `
@@ -211,7 +217,7 @@ function renderProjects(projects) {
                     </div>
                 ` : ''}
                 <div class="project-links">
-                    ${project.demo ? `<a href="${project.demo}" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo</a>` : ''}
+                    ${project.demo ? `<a href="${project.demo}" target="_blank" rel="noopener noreferrer" class="project-link">${project.linkLabel || demoLabel}</a>` : ''}
                     ${project.github ? `<a href="${project.github}" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>` : ''}
                 </div>
             </div>

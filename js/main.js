@@ -163,6 +163,7 @@ generateCodeBackground('codeBackground', 20); // Hero section
 generateCodeBackground('codeBackgroundSkills', 12);
 generateCodeBackground('codeBackgroundServices', 12);
 generateCodeBackground('codeBackgroundProjects', 12);
+generateCodeBackground('codeBackgroundVideoProjects', 12);
 generateCodeBackground('codeBackgroundTimeline', 12);
 generateCodeBackground('codeBackgroundTestimonials', 12);
 generateCodeBackground('codeBackgroundFAQ', 12);
@@ -453,7 +454,7 @@ const socialProofMessages = [
     { icon: '🌎', text: () => `Visitor from ${getRandomCountry()} just viewed this portfolio.` },
     { icon: '👁️', text: () => `Someone from ${getRandomCountry()} is checking the "About Me" page right now.` },
     { icon: '💻', text: () => `Visitor from ${getRandomCountry()} exploring the "Recent Projects" showcase.` },
-    { icon: '👀', text: () => `Someone from ${getRandomCountry()} is viewing the "WordPress Projects" section.` },
+    { icon: '👀', text: () => `Someone from ${getRandomCountry()} is viewing the "Featured Web Projects" section.` },
     { icon: '🧠', text: () => `A visitor from ${getRandomCountry()} is checking the skills and expertise section.` },
     // Engagement/Interaction
     { icon: '⭐', text: () => `Someone from ${getRandomCountry()} just bookmarked this portfolio link.` },
@@ -588,7 +589,9 @@ function initSocialProofNotifications() {
                 let message = null;
                 
                 if (sectionId === 'projects') {
-                    message = { icon: '👀', text: () => `Someone from ${getRandomCountry()} is viewing the "WordPress Projects" section.` };
+                    message = { icon: '👀', text: () => `Someone from ${getRandomCountry()} is viewing the "Featured Web Projects" section.` };
+                } else if (sectionId === 'video-projects') {
+                    message = { icon: '🎬', text: () => `Someone from ${getRandomCountry()} is viewing the "Featured Video Edits" section.` };
                 } else if (sectionId === 'about') {
                     message = { icon: '🧠', text: () => `Someone from ${getRandomCountry()} is checking the "About Me" page right now.` };
                 } else if (sectionId === 'testimonials') {
