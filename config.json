@@ -2,8 +2,8 @@
   "personal": {
     "name": "Fidelzky",
     "fullName": "Fidel Centeno",
-    "title": "WordPress Developer & Vibe Coder",
-    "bio": "Passionate WordPress developer specializing in AI-assisted software development (vibe coding). Using natural language to describe goals and leveraging AI tools to generate clean, efficient code. Crafting digital experiences with custom themes, plugin development, and performance optimization.",
+    "title": "WordPress Developer, Vibe Coder & Video Editor",
+    "bio": "Passionate WordPress developer, vibe coder, and video editor. I specialize in AI-assisted software development, crafting digital experiences with custom themes, plugin development, and performance optimization — while also producing polished video content with professional editing, motion graphics, and storytelling.",
     "avatar": "./Fidel Profile.png"
   },
   "skills": [
@@ -66,6 +66,26 @@
     {
       "name": "GitHub Copilot",
       "level": 85
+    },
+    {
+      "name": "Adobe Premiere Pro",
+      "level": 85
+    },
+    {
+      "name": "DaVinci Resolve",
+      "level": 80
+    },
+    {
+      "name": "After Effects",
+      "level": 75
+    },
+    {
+      "name": "Video Editing",
+      "level": 85
+    },
+    {
+      "name": "Motion Graphics",
+      "level": 70
     }
   ],
   "services": [
@@ -139,6 +159,18 @@
         "Scalable cloud infrastructure setup",
         "API integration & third-party service connections",
         "Automated testing & deployment pipelines"
+      ]
+    },
+    {
+      "title": "Professional Video Editing & Post-Production",
+      "icon": "🎬",
+      "description": "Creating engaging video content with professional editing, color grading, motion graphics, and polished post-production for social media, marketing, and brand storytelling.",
+      "features": [
+        "Social media & promotional video editing",
+        "Color grading & audio enhancement",
+        "Motion graphics & visual effects",
+        "YouTube, reels & short-form content",
+        "Brand storytelling & narrative editing"
       ]
     }
   ],
@@ -225,6 +257,14 @@
     {
       "question": "Is it possible to use Cursor or Replit for WordPress projects?",
       "answer": "Absolutely! Cursor and Replit are excellent for WordPress development. Cursor provides intelligent code completion and generation directly in your editor, perfect for writing WordPress themes and plugins. Replit offers cloud-based development environments where you can describe WordPress features and get AI-generated code, making it easy to prototype and test WordPress solutions quickly."
+    },
+    {
+      "question": "What types of video editing services do you offer?",
+      "answer": "I offer professional video editing for social media content, promotional videos, YouTube videos, reels, short-form content, and brand storytelling. Services include cutting and sequencing, color grading, audio enhancement, motion graphics, subtitles/captions, and polished post-production using tools like Adobe Premiere Pro, DaVinci Resolve, and After Effects."
+    },
+    {
+      "question": "Can you handle both web development and video editing for the same project?",
+      "answer": "Yes! Combining WordPress development with video editing allows me to deliver cohesive digital experiences — from building your website to creating the video content that promotes it. This is ideal for businesses that need landing pages, promotional videos, social media clips, and brand assets all aligned under one creative vision."
     }
   ],
   "contact": {

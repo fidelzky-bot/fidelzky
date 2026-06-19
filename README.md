@@ -50,7 +50,7 @@ Edit the `personal` section in `config.json`:
 {
   "personal": {
     "name": "Your Name",
-    "title": "WordPress Developer & Vibe Coder",
+    "title": "WordPress Developer, Vibe Coder & Video Editor",
     "bio": "Your bio here...",
     "avatar": "path/to/your/avatar.jpg"
   }

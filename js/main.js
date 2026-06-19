@@ -84,7 +84,7 @@ function initTypingAnimation() {
     
     if (typingText && heroName && heroTitle) {
         const nameText = heroName.textContent || 'Fidelzky';
-        const titleText = heroTitle.textContent || 'WordPress Developer & Vibe Coder';
+        const titleText = heroTitle.textContent || 'WordPress Developer, Vibe Coder & Video Editor';
         
         // First, type "Fidelzky"
         typeWriter(typingText, nameText, 80);
