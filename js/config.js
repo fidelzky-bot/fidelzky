@@ -105,7 +105,7 @@ function applyConfig() {
 
     // Apply video projects
     if (portfolioConfig.videoProjects && Array.isArray(portfolioConfig.videoProjects)) {
-        renderProjects(portfolioConfig.videoProjects, 'videoProjectsGrid', 'Watch Video');
+        renderVideoProjects(portfolioConfig.videoProjects);
     }
 
     // Apply timeline (always render, even if empty - will show default)
@@ -199,6 +199,74 @@ function renderServices(services) {
             ` : ''}
         </div>
     `).join('');
+}
+
+function getVideoEmbedUrl(url) {
+    if (!url) return '';
+
+    const trimmedUrl = url.trim().split('?')[0];
+    if (trimmedUrl.includes('youtube.com/embed') || trimmedUrl.includes('player.vimeo.com') || trimmedUrl.includes('streamable.com/e/')) {
+        return trimmedUrl;
+    }
+
+    const streamableMatch = trimmedUrl.match(/streamable\.com\/(?:e\/)?([a-zA-Z0-9]+)/);
+    if (streamableMatch && streamableMatch[1] !== 'e') {
+        return `https://streamable.com/e/${streamableMatch[1]}`;
+    }
+
+    const youtubeMatch = trimmedUrl.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]+)/);
+    if (youtubeMatch) {
+        return `https://www.youtube.com/embed/${youtubeMatch[1]}`;
+    }
+
+    const vimeoMatch = trimmedUrl.match(/vimeo\.com\/(\d+)/);
+    if (vimeoMatch) {
+        return `https://player.vimeo.com/video/${vimeoMatch[1]}`;
+    }
+
+    return trimmedUrl;
+}
+
+function renderVideoProjects(videoProjects) {
+    const videoProjectsGrid = document.getElementById('videoProjectsGrid');
+    if (!videoProjectsGrid) return;
+
+    videoProjectsGrid.innerHTML = videoProjects.map(project => {
+        const embedSource = project.embed || project.video || '';
+        const embedUrl = getVideoEmbedUrl(embedSource);
+        const watchUrl = project.demo || embedSource;
+
+        return `
+        <div class="project-card video-project-card">
+            ${embedUrl ? `
+                <div class="project-video-embed">
+                    <iframe
+                        src="${embedUrl}"
+                        title="${project.title || 'Video edit'}"
+                        frameborder="0"
+                        allow="fullscreen"
+                        allowfullscreen
+                        loading="lazy"
+                    ></iframe>
+                </div>
+            ` : project.image ? `<img src="${project.image}" alt="${project.title}" class="project-image">` : ''}
+            <div class="project-content">
+                <h3 class="project-title">${project.title || 'Video Edit'}</h3>
+                <p class="project-description">${project.description || ''}</p>
+                ${project.tech && project.tech.length > 0 ? `
+                    <div class="project-tech">
+                        ${project.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+                    </div>
+                ` : ''}
+                ${watchUrl ? `
+                    <div class="project-links">
+                        <a href="${watchUrl}" target="_blank" rel="noopener noreferrer" class="project-link">${project.linkLabel || 'Watch Video'}</a>
+                    </div>
+                ` : ''}
+            </div>
+        </div>
+    `;
+    }).join('');
 }
 
 function renderProjects(projects, gridId = 'projectsGrid', demoLabel = 'Live Demo') {

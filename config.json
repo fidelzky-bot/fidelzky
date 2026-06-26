@@ -192,7 +192,29 @@
       "github": ""
     }
   ],
-  "videoProjects": [],
+  "videoProjects": [
+    {
+      "title": "Short Form Video Edit",
+      "description": "A polished short-form video edit with pacing, transitions, and visual storytelling tailored for social media.",
+      "embed": "https://streamable.com/e/1omiv9",
+      "demo": "https://streamable.com/1omiv9",
+      "tech": ["CapCut", "DaVinci Resolve"]
+    },
+    {
+      "title": "Test Assignment",
+      "description": "A creative video edit showcasing timing, cuts, and narrative flow for a client-style assignment brief.",
+      "embed": "https://streamable.com/e/yu9ewm",
+      "demo": "https://streamable.com/yu9ewm",
+      "tech": ["CapCut"]
+    },
+    {
+      "title": "TRIAL REELS",
+      "description": "A reel-style edit built for vertical platforms with dynamic pacing, hooks, and engaging visual rhythm.",
+      "embed": "https://streamable.com/e/hn8srj",
+      "demo": "https://streamable.com/hn8srj",
+      "tech": ["CapCut", "Video Editing"]
+    }
+  ],
   "testimonials": [
     {
       "name": "Carol H.",
